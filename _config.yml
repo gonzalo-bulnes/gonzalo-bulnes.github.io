@@ -1,2 +1,3 @@
 markdown: redcarpet
 pygments: true
+exclude: [CODE_LICENSE, CONTENT_LICENSE, Gemfile, Gemfile.lock, README.md]
