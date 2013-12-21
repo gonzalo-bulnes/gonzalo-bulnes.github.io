@@ -1,3 +1,8 @@
+/* ========================================================================
+ * This file is part of the HTML5 Boilerplate 4.2.0
+ * See http://html5boilerplate.com
+ * ======================================================================== */
+
 var metas = document.getElementsByTagName('meta');
 var i;
 if (navigator.userAgent.match(/iPhone/i)) {

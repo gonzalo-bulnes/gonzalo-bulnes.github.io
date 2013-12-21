@@ -1,3 +1,9 @@
+/* ========================================================================
+ * This file is part of the HTML5 Boilerplate 4.2.0
+ * See http://html5boilerplate.com
+ * ======================================================================== */
+
+
 // Avoid `console` errors in browsers that lack a console.
 (function() {
     var method;
