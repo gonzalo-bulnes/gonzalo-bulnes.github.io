@@ -38,7 +38,11 @@ It aslo uses [Twitter Bootstrap][bootstrap] through the awesome assets pipeline 
 Licenses
 --------
 
-### Code (excluding the content of `_posts`)
+### Code
+
+**Important**: This section does **not** apply to the content of the `_posts`, `_drafts`, nor `assets/images` directories. (See the [content](https://github.com/gonzalo-bulnes/gonzalo-bulnes.github.io#content-mostly-but-not-only-located-into-_posts) for details.)
+
+Unless otherwise noted, this code is licensed under the following terms:
 
     Gonzalo Bulnes Guilapin Pages Code
     Copyright (C) 2013 Gonzalo Bulnes Guilpain
@@ -56,9 +60,15 @@ Licenses
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-### Content (mostly, but not only, located into `_posts`)
+### Published Content
 
-    Gonzalo Bulnes Guilapin Pages Content
+By "content" I mean the content of the `_posts`, and `assets/images` directories, or any other file explicitely identified as it.
+
+**Important**: The content of the `_drafts` directory
+
+Unless otherwise noted, the content of the site is licensed under the following terms:
+
+    Gonzalo Bulnes Guilapin Pages Published Content
     Copyright (C) 2013 Gonzalo Bulnes Guilpain
 
     Permission is granted to copy, distribute and/or modify this
@@ -67,3 +77,11 @@ Licenses
     Foundation; with no Invariant Sections, no Front-Cover Texts and
     no Back-Cover Texts.  A copy of the license is included in the
     file named "CONTENT_LICENSE".
+
+### Unublished Content
+
+You must **not** re-use any content of the `_draft`, nor any `draft` directory without my permission. For these files the following terms apply:
+
+    Gonzalo Bulnes Guilapin Pages Unpublished Content
+    Copyright (C) 2013 Gonzalo Bulnes Guilpain
+    All rights reserved.
