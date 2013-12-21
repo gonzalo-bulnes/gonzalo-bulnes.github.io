@@ -1,1 +1,4 @@
-_site
+# Since custom plugins are disabled in Github Pages
+# it's neseccary to upload the precompiled _site
+# when using Jekyll Assets.
+#_site
