@@ -64,8 +64,6 @@ Unless otherwise noted, this code is licensed under the following terms:
 
 By "content" I mean the content of the `_posts`, and `assets/images` directories, or any other file explicitely identified as it.
 
-**Important**: The content of the `_drafts` directory
-
 Unless otherwise noted, the content of the site is licensed under the following terms:
 
     Gonzalo Bulnes Guilapin Pages Published Content
