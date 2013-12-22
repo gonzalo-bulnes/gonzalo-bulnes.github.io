@@ -1,0 +1,547 @@
+/* ========================================================================
+ * This file is part of the Pygment distribution
+ * See http://http://pygments.org
+ *
+ * It has been generrated by:
+ * `pygmentize -S monokai  -f html | sed 's/\.hll/\.highlight/g' > pygment_trac.css`
+ * See http://subosito.com/notes/jekyll
+ *
+ * And modified to better compatibility with Bootstrap default styles.
+ * ======================================================================== */
+
+/* Bootstrap compatibillty enhancement */
+/*.highlight { background-color: #49483e }*/
+
+.highlight pre {
+  background-color: #49483e;
+  border-color: #49483e }
+
+.c { color: #75715e } /* Comment */
+.err { color: #960050; background-color: #1e0010 } /* Error */
+.k { color: #66d9ef } /* Keyword */
+.l { color: #ae81ff } /* Literal */
+.n { color: #f8f8f2 } /* Name */
+.o { color: #f92672 } /* Operator */
+.p { color: #f8f8f2 } /* Punctuation */
+.cm { color: #75715e } /* Comment.Multiline */
+.cp { color: #75715e } /* Comment.Preproc */
+.c1 { color: #75715e } /* Comment.Single */
+.cs { color: #75715e } /* Comment.Special */
+.ge { font-style: italic } /* Generic.Emph */
+.gs { font-weight: bold } /* Generic.Strong */
+.kc { color: #66d9ef } /* Keyword.Constant */
+.kd { color: #66d9ef } /* Keyword.Declaration */
+.kn { color: #f92672 } /* Keyword.Namespace */
+.kp { color: #66d9ef } /* Keyword.Pseudo */
+.kr { color: #66d9ef } /* Keyword.Reserved */
+.kt { color: #66d9ef } /* Keyword.Type */
+.ld { color: #e6db74 } /* Literal.Date */
+.m { color: #ae81ff } /* Literal.Number */
+.s { color: #e6db74 } /* Literal.String */
+.na { color: #a6e22e } /* Name.Attribute */
+.nb { color: #f8f8f2 } /* Name.Builtin */
+.nc { color: #a6e22e } /* Name.Class */
+.no { color: #66d9ef } /* Name.Constant */
+.nd { color: #a6e22e } /* Name.Decorator */
+.ni { color: #f8f8f2 } /* Name.Entity */
+.ne { color: #a6e22e } /* Name.Exception */
+.nf { color: #a6e22e } /* Name.Function */
+.nl { color: #f8f8f2 } /* Name.Label */
+.nn { color: #f8f8f2 } /* Name.Namespace */
+.nx { color: #a6e22e } /* Name.Other */
+.py { color: #f8f8f2 } /* Name.Property */
+.nt { color: #f92672 } /* Name.Tag */
+.nv { color: #f8f8f2 } /* Name.Variable */
+.ow { color: #f92672 } /* Operator.Word */
+.w { color: #f8f8f2 } /* Text.Whitespace */
+.mf { color: #ae81ff } /* Literal.Number.Float */
+.mh { color: #ae81ff } /* Literal.Number.Hex */
+.mi { color: #ae81ff } /* Literal.Number.Integer */
+.mo { color: #ae81ff } /* Literal.Number.Oct */
+.sb { color: #e6db74 } /* Literal.String.Backtick */
+.sc { color: #e6db74 } /* Literal.String.Char */
+.sd { color: #e6db74 } /* Literal.String.Doc */
+.s2 { color: #e6db74 } /* Literal.String.Double */
+.se { color: #ae81ff } /* Literal.String.Escape */
+.sh { color: #e6db74 } /* Literal.String.Heredoc */
+.si { color: #e6db74 } /* Literal.String.Interpol */
+.sx { color: #e6db74 } /* Literal.String.Other */
+.sr { color: #e6db74 } /* Literal.String.Regex */
+.s1 { color: #e6db74 } /* Literal.String.Single */
+.ss { color: #e6db74 } /* Literal.String.Symbol */
+.bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.vc { color: #f8f8f2 } /* Name.Variable.Class */
+.vg { color: #f8f8f2 } /* Name.Variable.Global */
+.vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.il { color: #ae81ff } /* Literal.Number.Integer.Long */
+/*
+ *= #require vendor/h5bp-4.2.0/normalize
+ *= #require vendor/bootstrap-3.0.3/bootstrap
+
+ *
+ * Copy the content of vendor/h5bp-4.2.0/main to
+ * this file to enable the H5BP
+ */
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  margin: 0;
+ }
+
+a {
+  text-decoration: none;
+  color: #3465a4; /* Tango Sky Blue */
+}
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  margin: 0;
+}
+nav ul, #main {
+  width: 100%;
+  max-width: 59.985rem;
+  margin: 0 auto;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+}
+nav li.aside {
+  float: right;
+}
+nav li.aside a {
+  text-transform: none;
+}
+nav a {
+  display: inline-block;
+  padding: 0.700rem 0.734rem 0.768rem 0; /* (2.541 - 1.073) : 2, center vertically */
+  font-size: 0.844rem;
+  line-height: 1.073rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+}
+nav li:first-child a, .media, #content h1,
+#post p, #toc p {
+  padding-left: 0.734rem;  /* (2.541 - 1.073) : 2 */
+  padding-right: 0.734rem;  /* (2.541 - 1.073) : 2 */
+}
+nav li.current a {
+  color: rgba(0, 0, 0, 0.3);
+  cursor: default;
+  text-decoration: none;
+}
+
+#main {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+#content {
+  border-right: 1px solid rgba(0, 0, 0, .15);
+  width: 47.200rem;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 720px;
+}
+#content h1 {
+  font-weight: 500;
+  font-size: 1.906rem;
+  color: rgba(0, 0, 0, .8);
+  line-height: 3.387rem;
+  margin: 1.999rem 0 0.663rem 0;
+}
+aside {
+  float: right;
+  clear: right;
+  width: 12.685rem; /* 59.985 - 47.200 - epsilon */
+  padding: 0;
+  margin: 0;
+
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 0.844rem;
+  line-height: 1.073rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+aside ul,
+aside p {
+  list-style: none;
+  margin: 1.125rem 0;
+  padding: 0;
+}
+aside li {
+  line-height: 1.430rem;
+}
+aside a {
+  display: inline-block;
+  width: 100%;
+}
+aside h1, aside ul, aside p {
+  text-align: left;
+  font-size: 0.884rem;
+  padding-left: 1.999rem;
+}
+aside h1 {
+  margin: 1.125rem 0 0.475rem 0;
+}
+aside:first-child h1 {
+  margin-top: 3.552rem;
+}
+
+/* From here all lenghts should be revised. */
+
+footer {
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+}
+footer small {
+  display: block;
+  font-size: 0.844rem;
+  padding: 0.700rem 0 0.768rem 0; /* (2.541 - 1.073) : 2, center vertically */
+  line-height: 1.073rem;
+  width: 100%;
+  max-width: 59.985rem;
+  margin: 0 auto;
+}
+
+#toc ul {
+  list-style: none;
+  margin: 1.125rem 0.734rem;
+  padding: 0;
+}
+#toc li {
+  line-height: 1.906rem;
+}
+#toc time {
+  font-size: 0.844rem;
+  line-height: 1.073rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 0.375rem;
+}
+
+#notes {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#technology-colophon a,
+#technology-colophon a:focus,
+#technology-colophon a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+#technology-colophon abbr {
+  text-decoration: none;
+  border-bottom: none;
+}
+#technology-colophon .fa-html5 {
+  color: #F14A29; /* See http://www.w3.org/html/logo */
+}
+#technology-colophon p {
+  margin-bottom: 1.999rem;
+}
+
+#post h1 {
+  text-align: center;
+}
+
+p.blank {
+  font-size: 0.906rem;
+  line-height: 1.2rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

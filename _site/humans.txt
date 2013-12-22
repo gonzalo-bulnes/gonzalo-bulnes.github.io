@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Gonzalo Bulnes Guilpain -- Author -- https://github.com/gonzalo-bulnes
+
+# THANKS
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, jQuery, Modernizr
+    Bootstrap, Font Awesome, Pygments
