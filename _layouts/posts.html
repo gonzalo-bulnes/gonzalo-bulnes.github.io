@@ -15,16 +15,18 @@ layout: h5bp
 </nav>
 
 <div class="container" id="main">
-  <aside>
-    <h1>See Also</h1>
-      <ul>
-        {% for resource in page.related %}
-          <li>
-            <a href="{{ resource.url }}">{{ resource.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-  </aside>
+  {% if page.related %}
+    <aside>
+      <h1>See Also</h1>
+        <ul>
+          {% for resource in page.related %}
+            <li>
+              <a href="{{ resource.url }}">{{ resource.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+    </aside>
+  {% endif %}
   <div id="notes">
     <aside id="typo-credits">
       <h1>Typography</h1>
