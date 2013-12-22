@@ -1,0 +1,49 @@
+---
+layout: h5bp
+---
+
+<header>
+</header>
+
+<nav>
+  <div class="container">
+    <ul>
+      <li class="current"><a href="{{ site.url }}">Table of Contents</a></li>
+      <li class="aside"><a href="{{ site.author.github }}">by Gonzalo Bulnes Guilpain</a></li>
+    </ul>
+  </div><!-- .container -->
+</nav>
+
+<div class="container" id="main">
+  <aside>
+    <h1>See Also</h1>
+      <ul>
+        {% for resource in page.related %}
+          <li>
+            <a href="{{ resource.url }}">{{ resource.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+  </aside>
+  <div id="notes">
+    <aside id="typo-credits">
+      <h1>Typography</h1>
+      <p>This page uses the <a href="">Ubuntu font</a> in its <i>normal</i> variant.</p>
+    </aside>
+    <aside id="technology-colophon">
+      <p>
+        <a href="http://www.w3.org/html/logo/"><abbr title="HTML5"><i class="fa fa-html5 fa-lg"></i></abbr>
+        Semantics and CSS3</a>
+      </p>
+    </aside>
+  </div><!-- #notes -->
+  <div id="content">
+  {{ content }}
+  </div><!-- #content -->
+</div><!-- .container -->
+
+<footer>
+  <div class="container">
+    <small>Copyright &copy; 2012-2013 <a href="http://gonzalobulnes.com">Gonzalo Bulnes Guilpain</a></small>
+  </div><!-- .container -->
+</footer>

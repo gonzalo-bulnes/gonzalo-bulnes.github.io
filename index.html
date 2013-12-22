@@ -1,11 +1,18 @@
 ---
-layout: bootstrap
+layout: posts
 ---
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<header>
+  <h1>Table of Contents</h1>
+<header>
+
+<section id="toc">
+  <ul>
+      {% for post in site.posts %}
+        <li>
+          <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+</section>
