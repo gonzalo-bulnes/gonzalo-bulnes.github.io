@@ -1,0 +1,40 @@
+/* Modular Scale
+ * 16px @ 1:1.618
+ * 520px @ 1:1.618
+ * See http://modularscale.com/
+ */
+
+// from the modular scale
+$font-size-xs: 0.618rem;
+$font-size-s: 0.692rem;
+$font-size: 1rem;
+$font-size-m: 1.120rem;
+$font-size-l: 1.618rem;
+$font-size-xl: 1.811rem;
+$font-size-xxl: 2.931rem;
+ // out of the modular scale
+$font-size-ms: 0.893rem; /* 1 / 1.120 I was missing a value between 11 and 16 */
+
+// from the modular scale
+$measure-s: 20.087rem;
+$measure: 32.5rem;
+$measure-xl: 52.585rem;
+$measure-xxl: 85.082rem;
+// extrapolation from the modular scale
+$measure-l: $measure + 12.414rem;
+
+// The vertical rythym should be constant, that's why even if the font-sizes
+// follow the modular scale, the line-heights don't.
+// Use the .vertical-hint class to make the vertical rythym visible.
+//
+// To increase the line-height, you only need to change the $relative-line-height,
+// all others (including the .vertical-hint) will follow.
+$relative-line-height: 1.811rem; // (rlh) corresponding to the relative em (rem)
+
+$line-height: $relative-line-height / 1rem; // base for the vertical rythym, see $relative-line-height
+$line-height-m: 1rem / $font-size-m * $line-height; // keep the 1rlh line-height
+$line-height-l: 1.5rem / $font-size-l * $line-height; // keep the 1.5rlh line-height
+$line-height-xxl:  2rem / $font-size-xxl * $line-height; // keep the 3rlh line-height
+
+$line-height-ms: 0.75rem / $font-size-ms * $line-height;  // keep the .75rlh line-height
+$line-height-ms-regular: 1rem / $font-size-ms * $line-height;  // keep the 1rlh line-height

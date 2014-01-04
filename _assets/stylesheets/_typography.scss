@@ -1,0 +1,21 @@
+/* Vertical Rythym */
+
+.vertical-hint {
+    /* Horizontal lines pattern
+     * Found through Lea Verrou
+     * http://lea.verou.me/css3patterns/#lined-paper
+     * Original by: Sarah Backhouse, see ttp://www.jadu.net
+     */
+    background-color: #fff;
+    background-image: linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% $relative-line-height; /* base line-height */
+    background-position: 0 0;
+}
+
+/* Typography */
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+}

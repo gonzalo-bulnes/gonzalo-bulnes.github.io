@@ -1,0 +1,16 @@
+@import 'modular_scale';
+
+@mixin title {
+    text-transform: capitalize;
+}
+
+@mixin center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin single-line {
+    padding: .25 * $relative-line-height 0;
+    font-size: $font-size-ms;
+    line-height: $line-height-ms-regular;
+}

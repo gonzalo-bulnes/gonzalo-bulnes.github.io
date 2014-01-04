@@ -4,7 +4,14 @@
 //= require_self
 //= require 'vendor/h5bp-4.2.0/main_tail'
 
+@import 'modular_scale';
+@import 'mixins';
 
-html {
-  color: inherit; // trigger the Jekyll Assets pipeline
+@import 'typography';
+
+ul {
+    width: $measure-xl;
+    @include center;
+    list-style: circle;
+    margin-bottom: 1.5 * $relative-line-height;
 }
