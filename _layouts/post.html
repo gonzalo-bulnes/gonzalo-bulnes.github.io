@@ -2,4 +2,19 @@
 layout: h5bp
 ---
 
-{{ content }}
+<article>
+  {{ content }}
+</article>
+
+{% if page.related %}
+  <aside id="references">
+    <h2 class="permalink milestone">References</h2>
+    <ul>
+      {% for reference in page.related %}
+      <li>
+        {{ reference.description }}: <a href="{{ reference.url }}"><em>{{ reference.title }}</em></a> {{ reference.author }}.
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+{% endif %}
