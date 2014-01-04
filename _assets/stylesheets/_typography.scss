@@ -12,10 +12,121 @@
     background-position: 0 0;
 }
 
-/* Typography */
+/* Typography and vertical rythym */
+
+html, body {
+    margin-left: 0;
+    margin-right: 0;
+}
 
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: $font-size;
     line-height: $line-height;
+}
+
+article {
+    padding-top: .5 * $relative-line-height;
+}
+
+article, h1 {
+    width: $measure-xl;
+}
+
+h1 {
+    font-size: $font-size-xxl;
+    line-height: $line-height-xxl;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: .5 * $relative-line-height;
+}
+
+h2 {
+    font-size: $font-size-l;
+    line-height: $line-height-l;
+    width: $measure-xl;
+    font-weight: 700;
+    margin-top: 1.5 * $relative-line-height;
+    margin-bottom: .5 * $relative-line-height;
+}
+
+p, dl {
+    font-size: $font-size;
+    line-height: $line-height;
+    width: $measure;
+    margin-top: 0;
+    margin-bottom: .5 * $relative-line-height;
+
+}
+
+.figure, pre {
+    font-size: $font-size-ms;
+    line-height: $line-height-ms-regular;
+    width: $measure;
+}
+
+.figure pre {
+    padding-top: ($line-height - $line-height-ms) * 1rem;
+    margin-bottom: $line-height-ms;
+}
+
+// .figure {
+//     width: $measure-s;
+//     pre {
+//         line-height: $line-height-ms;
+//         width: $measure-s;
+//     }
+// }
+
+// Pygment Github override, see 'pygments/pygment_github'
+.highlight pre, pre, .highlight .hll {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+header {
+    padding-top: 2 * $relative-line-height;
+}
+
+header small {
+    margin-bottom: $relative-line-height;
+    font-size: $font-size-ms;
+    line-height: $line-height-ms-regular;
+    text-align: center;
+    display: block;
+}
+
+header p {
+    font-size: $font-size-m;
+    line-height: $line-height-m;
+    width: $measure-xl;
+    font-style: italic;
+    margin-bottom: $relative-line-height;
+    margin-top: 1.5 * $relative-line-height;
+}
+
+ul {
+    width: $measure-xl;
+    margin-bottom: 1.5 * $relative-line-height;
+}
+
+dd {
+    padding: 0;
+    margin: 0;
+    abbr {
+        font-style: italic;
+        width: 1.5 * $font-size;
+    }
+}
+
+footer {
+  margin-top: 1.5 * $relative-line-height;
+  small {
+    display: inline-block;
+    @include single-line;
+  }
+  .inner {
+    width: $measure-xl;
+  }
 }

@@ -8,10 +8,3 @@
 @import 'mixins';
 
 @import 'typography';
-
-ul {
-    width: $measure-xl;
-    @include center;
-    list-style: circle;
-    margin-bottom: 1.5 * $relative-line-height;
-}
