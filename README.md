@@ -24,4 +24,7 @@ git commit -m "Publish article Using Git To Go Forward"
 git push --force origin publish-article-using-git-to-go-forward:master
 ```
 
+This site also uses [Jekyll SASS][jekyll-sass], but `jekyll serve` knows how to deal with it.
+
   [jekyll-assets]: https://github.com/ixti/jekyll-assets
+  [jekyll-sass]: https://github.com/noct/jekyll-sass
