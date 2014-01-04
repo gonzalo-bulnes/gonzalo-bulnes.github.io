@@ -1,6 +1,9 @@
 //= require 'vendor/github_pages/pygment_github'
 //= require 'vendor/h5bp-4.2.0/normalize'
-//= require 'vendor/h5bp-4.2.0/main'
+//= require 'vendor/h5bp-4.2.0/main_head'
+//= require_self
+//= require 'vendor/h5bp-4.2.0/main_tail'
+
 
 html {
   color: inherit; // trigger the Jekyll Assets pipeline
