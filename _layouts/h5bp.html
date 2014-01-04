@@ -12,10 +12,10 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="/stylesheets/normalize.css">
-        <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
-        <link rel="stylesheet" href="/stylesheets/main.css">
-        <script src="/javascripts/vendor/modernizr-2.6.2.min.js"></script>
+        {% stylesheet normalize %}
+        {% stylesheet pygment_trac %}
+        {% stylesheet main %}
+        {% javascript vendor/modernizr-2.6.2.min %}
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -27,9 +27,9 @@
         {{ content }}
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/javascripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="/javascripts/plugins.js"></script>
-        <script src="/javascripts/main.js"></script>
+        <script>/* <!-- */window.jQuery || document.write('{% javascript vendor/jquery-1.9.1.min %}')/* --> */</script>
+        {% javascript plugins %}
+        {% javascript main %}
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
