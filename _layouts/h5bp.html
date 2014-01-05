@@ -10,7 +10,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         {% if page.redirect_url %}
-            <meta http-equiv="refresh" content="0; url={{ page.redirect_url }}">
+            {% comment %}
+                See http://stackoverflow.com/questions/10178304/github-jekyll-old-pages-redirection-best-approach
+            {% endcomment %}
+            <meta http-equiv="refresh" content="2; url={{ page.redirect_url }}">
         {% endif %}
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
