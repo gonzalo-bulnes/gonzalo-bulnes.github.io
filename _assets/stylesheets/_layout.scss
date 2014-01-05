@@ -1,0 +1,65 @@
+html, body {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+article, h1 {
+    @include center;
+}
+
+h1 {
+    @include title;
+}
+
+h2 {
+    @include title;
+    @include center;
+    clear: right;
+}
+
+header p {
+    @include center;
+}
+
+// .figure {
+//     float: right;
+//     margin-right: -7.673rem;
+//     clear: right;
+// }
+
+// Pygment Github override, see 'pygments/pygment_github'
+.highlight pre, pre, .highlight .hll {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+aside ul {
+    @include center;
+    list-style: circle;
+}
+
+ul {
+    @include center;
+    list-style: circle;
+}
+
+dd {
+    abbr {
+        display: inline-block;
+    }
+    p {
+        display: inline-block;
+    }
+}
+
+footer {
+    margin-top: 1.5 * $relative-line-height;
+    .inner {
+        width: $measure-xl;
+        @include center;
+    }
+    .aside {
+        float: right;
+    }
+}
+
