@@ -1,3 +1,8 @@
+author:
+  name: Gonzalo Bulnes Guilpain
+  github: https://github.com/gonzalo-bulnes
 exclude: [Gemfile, Gemfile.lock, README.md]
+github: https://github.com/gonzalo-bulnes/gonzalo-bulnes.github.io
 markdown: redcarpet
 pygments: true
+url: http://gonzalobulnes.com
