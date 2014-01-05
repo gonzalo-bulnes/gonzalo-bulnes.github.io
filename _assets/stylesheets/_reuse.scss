@@ -1,0 +1,31 @@
+@import 'modular_scale';
+
+body#reuse {
+  article header h1,
+  article header small {
+    margin-left: 1rem;
+    width: $measure-xl - 1rem;
+  }
+
+  article header p {
+    margin-left: 13rem;
+    width: $measure-xl - 13rem;
+  }
+
+  article dl {
+    margin-left: 8rem;
+  }
+
+  article header::before {
+    content: " ";
+    position: absolute;
+    top: -6.6rem;
+    left: -15.9rem;
+    width: 450px;
+    height: 580px;
+    // Jekyll Assets Liquid tags don't get copiled here,
+    // see 'h5bp' layout for background properties.
+    //background: transparent url('{% asset_path reuse-450x600.png %}') no-repeat left top;
+    z-index: -1;
+  }
+}
