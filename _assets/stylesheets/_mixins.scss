@@ -14,3 +14,47 @@
     font-size: $font-size-ms;
     line-height: $line-height-ms-regular;
 }
+
+@mixin call-to-action-typography {
+    small {
+        font-size: $font-size-ms;
+        line-height: $line-height-ms-regular;
+        margin-top: 9rem;
+        margin-bottom: 9rem;
+        display: block;
+        width: $measure-xl;
+    }
+}
+
+@mixin call-to-action-layout {
+    small {
+        margin-left: 0;
+        margin-right: 0;
+        @include center;
+        text-align: center;
+    }
+}
+
+@mixin call-to-action-decoration {
+    small {
+        color: $gray;
+        &:focus, &:hover {
+            color: $dark-gray;
+            a {
+                opacity: 1;
+            }
+            abbr {
+                color: $gray;
+            }
+        }
+        a {
+            opacity: .7;
+            &:focus, &:hover {
+                opacity: 1;
+            }
+        }
+        abbr, abbr[title] {
+            border-width: 0;
+        }
+    }
+}

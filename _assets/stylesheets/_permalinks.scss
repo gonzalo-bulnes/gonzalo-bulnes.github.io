@@ -51,6 +51,10 @@ article {
     }
 }
 
+#eferences {
+    @include call-to-action-typography;
+}
+
 // Layout
 
 .permalink {
@@ -67,7 +71,8 @@ article {
     }
 }
 
-#references, #comments {
+#references {
+    @include call-to-action-layout;
     h2 {
         text-align: left;
     }
@@ -91,7 +96,8 @@ article {
     }
 }
 
-#references, #comments {
+#references {
     border: 1px solid $light-gray;
     border-width: 1px 0 0;
+    @include call-to-action-decoration;
 }
