@@ -1,0 +1,37 @@
+@import 'colors';
+
+header small {
+    color: $gray;
+}
+
+h2 {
+    color: $fushia;
+}
+
+a {
+    color: $tango-sky-blue;
+    text-decoration: none;
+    &:focus, &:hover {
+        text-decoration: underline;
+    }
+}
+
+dd {
+    abbr, abbr[title] {
+        border-bottom: none;
+    }
+}
+
+footer {
+    border: 1px solid $light-gray;
+    border-width: 1px 0;
+}
+
+// Pygment Github override, see 'pygments/pygment_github'
+.highlight pre, pre, .highlight .hll {
+    background-color: transparent;
+    border-width: 0;
+}
+
+// See 'permalinks/decoration' partial for permalinks decoration.
+// See 'navigation/decoration' partial for navigation links decoration.

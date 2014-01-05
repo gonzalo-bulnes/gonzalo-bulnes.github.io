@@ -1,0 +1,97 @@
+@import 'modular_scale';
+@import 'mixins';
+
+// Typography
+
+nav {
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    small {
+        font-size: $font-size-ms;
+        line-height: $line-height-ms-regular;
+        margin-top: 9rem;
+        margin-bottom: 9rem;
+        display: block;
+        width: $measure-xl;
+    }
+    ul {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        width: $measure-xl;
+    }
+    li {
+        & a {
+            display: inline-block;
+            @include single-line;
+            text-transform: uppercase;
+        }
+        &.aside a {
+            text-transform: none;
+        }
+        &.active a {
+            color: $light-gray;
+        }
+    }
+}
+
+// Layout
+
+nav {
+    margin-left: 0;
+    margin-right: 0;
+    small {
+        margin-left: 0;
+        margin-right: 0;
+        @include center;
+        text-align: center;
+    }
+    ul {
+        padding-left: 0;
+        padding-right: 0;
+        width: $measure-xl;
+        @include center;
+    }
+    li {
+        display: inline-block;
+        &.aside {
+            float: right;
+        }
+    }
+}
+
+// Decoration
+
+nav {
+    border: 1px solid $light-gray;
+    border-width: 1px 0;
+    color: $gray;
+    small {
+        &:focus, &:hover {
+            color: $dark-gray;
+            a {
+                opacity: 1;
+            }
+        }
+        a {
+            opacity: .7;
+            &:focus, &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    li {
+        & a {
+            //color: $middle-gray;
+            color: $gray;
+            &:focus, &:hover {
+                text-decoration: none;
+            }
+        }
+        // &.active a {
+        //     color: $light-gray;
+        // }
+    }
+}

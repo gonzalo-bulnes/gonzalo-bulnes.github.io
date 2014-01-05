@@ -1,0 +1,96 @@
+@import 'modular_scale';
+@import 'colors';
+
+// Behaviour
+
+.permalink {
+  &:focus, &:hover {
+    h2 &::after {
+      content: "#section";
+      display: inline-block;
+    }
+  }
+}
+
+// Typography
+
+.permalink {
+  &:focus, &:hover {
+    h2 &::after {
+      color: rgba(0, 0, 0, .8);
+      font-size: $font-size-ms;
+      text-transform: lowercase;
+      font-weight: 400;
+    }
+  }
+}
+
+article {
+  position: relative;
+  header .permalink {
+    position: absolute;
+    top: -2 * $relative-line-height; // Make the Table of Contents link visible
+  }
+  h1 .permalink {
+    position: relative;
+    top: 0;
+  }
+}
+
+.milestone {
+    h2, & {
+        font-size: $font-size-ms;
+        line-height: $line-height-ms-regular;
+        @include single-line;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 0;
+        margin-top: 0;
+        display: block;
+    }
+}
+
+// Layout
+
+.permalink {
+    &:focus, &:hover {
+        h2 &::after {
+            margin-left: .5rem;
+        }
+    }
+}
+
+.milestone {
+    h2, & {
+        text-align: right;
+    }
+}
+
+#references, #comments {
+    h2 {
+        text-align: left;
+    }
+}
+
+// Decoration
+
+.permalink {
+    color: inherit;
+    &:focus, &:hover {
+        text-decoration: none;
+        h2 &::after {
+            color: $dark-gray;
+        }
+    }
+}
+
+.milestone {
+    h1, & {
+        color: $gray;
+    }
+}
+
+#references, #comments {
+    border: 1px solid $light-gray;
+    border-width: 1px 0 0;
+}
