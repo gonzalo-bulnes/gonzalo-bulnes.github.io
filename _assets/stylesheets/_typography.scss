@@ -65,18 +65,16 @@ p, dl {
     width: $measure;
 }
 
-.figure pre {
-    padding-top: ($line-height - $line-height-ms) * 1rem;
-    margin-bottom: $line-height-ms;
+.figure {
+    //width: $measure-s; // $measure-s is too narrow for code
+    pre, .highlight pre {
+        line-height: $line-height-ms;
+        //width: $measure-s; // $measure-s is too narrow for code
+        padding-top: ($line-height - $line-height-ms) * 1rem;
+        margin-bottom: $line-height-ms;
+        margin-top: 0;
+    }
 }
-
-// .figure {
-//     width: $measure-s;
-//     pre {
-//         line-height: $line-height-ms;
-//         width: $measure-s;
-//     }
-// }
 
 // Pygment Github override, see 'pygments/pygment_github'
 .highlight pre, pre, .highlight .hll {

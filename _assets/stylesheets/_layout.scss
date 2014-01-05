@@ -21,11 +21,16 @@ header p {
     @include center;
 }
 
-// .figure {
-//     float: right;
-//     margin-right: -7.673rem;
-//     clear: right;
-// }
+.figure {
+    float: right;
+    // from modular scale, works well with $measure-s width,
+    // see 'typography'
+    //margin-right: -7.673rem;
+    //
+    // arbitrary, out of modular scale :(
+    margin-right: -.5 * $measure + 2.5rem;
+    clear: right;
+}
 
 // Pygment Github override, see 'pygments/pygment_github'
 .highlight pre, pre, .highlight .hll {
