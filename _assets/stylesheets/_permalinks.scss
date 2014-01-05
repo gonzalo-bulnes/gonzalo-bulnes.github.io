@@ -29,7 +29,8 @@ article {
   position: relative;
   header .permalink {
     position: absolute;
-    top: -2 * $relative-line-height; // Make the Table of Contents link visible
+    // Make the Table of Contents link visible
+    top: -1.5 * $relative-line-height;
   }
   h1 .permalink {
     position: relative;

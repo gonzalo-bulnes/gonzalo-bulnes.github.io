@@ -19,7 +19,7 @@ body#reuse {
   article header::before {
     content: " ";
     position: absolute;
-    top: -6.6rem;
+    top: -6.6rem + .5 * $relative-line-height;
     left: -15.9rem;
     width: 450px;
     height: 580px;

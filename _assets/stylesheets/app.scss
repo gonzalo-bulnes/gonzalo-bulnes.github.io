@@ -16,3 +16,8 @@
 @import 'code';
 
 @import 'reuse';
+
+// The Markdown compliler creates empty paragraphs :/
+p:empty {
+  display: none;
+}
