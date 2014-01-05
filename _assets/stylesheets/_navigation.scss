@@ -74,12 +74,18 @@ nav {
             a {
                 opacity: 1;
             }
+            abbr {
+                color: $gray;
+            }
         }
         a {
             opacity: .7;
             &:focus, &:hover {
                 opacity: 1;
             }
+        }
+        abbr, abbr[title] {
+            border-width: 0;
         }
     }
     li {
