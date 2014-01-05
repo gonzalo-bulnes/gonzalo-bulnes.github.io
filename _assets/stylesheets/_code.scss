@@ -1,0 +1,27 @@
+@import 'modular_scale';
+@import 'colors';
+
+// Typography
+
+code {
+    font-size: $font-size-ms;
+}
+
+// Layout
+
+pre code {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Decoration
+
+code {
+    border: 1px solid $gray;
+    border-radius: 2px;
+    padding: 0 0.25rem; // is decoration since the code display is inline
+}
+
+pre code {
+    border-width: 0;
+}
