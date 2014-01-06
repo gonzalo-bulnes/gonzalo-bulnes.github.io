@@ -9,6 +9,11 @@
       content: "#section";
       display: inline-block;
     }
+    .comment &::after {
+      content: "#comment";
+      display: inline-block;
+    }
+
   }
 }
 
@@ -16,7 +21,8 @@
 
 .permalink {
   &:focus, &:hover {
-    h2 &::after {
+    h2 &::after,
+    .comment &::after {
       color: rgba(0, 0, 0, .8);
       font-size: $font-size-ms;
       text-transform: lowercase;
@@ -51,7 +57,7 @@ article {
     }
 }
 
-#eferences {
+#eferences, #comments {
     @include call-to-action-typography;
 }
 
@@ -59,7 +65,8 @@ article {
 
 .permalink {
     &:focus, &:hover {
-        h2 &::after {
+        h2 &::after,
+        .comment &::after {
             margin-left: .5rem;
         }
     }
@@ -71,7 +78,7 @@ article {
     }
 }
 
-#references {
+#references, #comments {
     @include call-to-action-layout;
     h2 {
         text-align: left;
@@ -84,7 +91,8 @@ article {
     color: inherit;
     &:focus, &:hover {
         text-decoration: none;
-        h2 &::after {
+        h2 &::after,
+        .comment &::after {
             color: $dark-gray;
         }
     }
@@ -96,7 +104,7 @@ article {
     }
 }
 
-#references {
+#references, #comments {
     border: 1px solid $light-gray;
     border-width: 1px 0 0;
     @include call-to-action-decoration;

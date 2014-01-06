@@ -1,0 +1,82 @@
+@import 'modular_scale';
+@import 'mixins';
+
+// Typography
+
+#comments {
+    small {
+        margin-top: 2* $relative-line-height;
+        margin-bottom: 2 * $relative-line-height;
+    }
+    .comments-list {
+        width: $measure-xl;
+        .comment {
+          padding-top: $relative-line-height;
+          padding-bottom: $relative-line-height;
+          margin-bottom: $relative-line-height;
+          header {
+            padding-top: 0;
+          }
+          .details {
+            margin-bottom: .5 * $relative-line-height;
+            .commentuser {
+              font-weight: 700;
+            }
+            .commentdate {
+              font-size: $font-size-ms;
+              line-height: $line-height-ms-regular;
+            }
+          }
+          .body, .body p, .body pre {
+            font-size: $font-size-ms;
+            line-height: $line-height-ms-regular;
+            width: $measure;
+          }
+        }
+    }
+}
+
+// Layout
+
+#comments {
+    h2 {
+      text-align: center;
+    }
+    .comments-list {
+        @include center;
+        padding-left: 0;
+        padding-right: 0;
+        .comment {
+            padding-left: .5 * $relative-line-height;
+            padding-right: .5 * $relative-line-height;
+            .avatar {
+                float: left;
+                margin-right: 0.906rem;
+            }
+            .commentuser {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
+
+// Decoration
+
+#comments {
+    .comments-list {
+        list-style: none;
+        .comment {
+            border: 1px solid $light-gray;
+            border-radius: 6px;
+            .commentdate {
+                color: $gray;
+            }
+            .avatar {
+                border-radius: 6px;
+            }
+            .body, .body p {
+                display: inline-block;
+            }
+        }
+    }
+}
