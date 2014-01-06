@@ -1,0 +1,36 @@
+<script>
+  /* Original code by Ivan Žužak,
+   * see http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html
+   * and https://github.com/izuzak/izuzak.github.com/blob/d368bf559e8d9908e815ac03527cb30ced85b4c1/_layouts/post.html
+   * Modifications by Gonzalo Bulnes https://github.com/gonzalo-bulnes
+   */
+
+  function loadComments(data) {
+    for (var i=0; i<data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "{{ site.comments.issue.base_url }}/{{ page.comments_issue_id }}#issuecomment-" + data[i].url.substring(data[i].url.lastIndexOf("/")+1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = $.format.date(data[i].created_at, "yyyy-MM-dd");
+      var cprettydate = $.format.prettyDate(data[i].created_at);
+
+      $("#comments .comments-list").append("<li class='comment'><header>" + '<img src="' + cavatarlink + '" alt="" width="76" height="76" class="avatar"/>' + "<div class='details'><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a><a class='commentdate permalink' href=\"" + clink + "\"><time datetime=\"" + cdate + "\">" + cprettydate + "</time></a></div></header><section class='body'>" + cbody + "</section></li>");
+    }
+  }
+
+  $('document').ready(function(){
+
+    // Remove the Javascript warning
+    $('#comments-javascript-info').remove();
+
+    // Fetch comments from Github and load them
+    $.ajax("{{ site.comments.issue.api_base_url }}/{{page.comments_issue_id}}/comments?per_page=30", {
+      headers: {Accept: "application/vnd.github.html+json"},
+      dataType: "json",
+      success: function(msg){
+        loadComments(msg);
+      }
+    });
+  });
+</script>

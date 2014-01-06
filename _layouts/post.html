@@ -18,3 +18,17 @@ layout: app
     </ul>
   </aside>
 {% endif %}
+
+{% if page.comments_issue_id %}
+  <aside id="comments">
+    <h2 class="permalink milestone">Comments</h2>
+    <ol class="comments-list">
+    </ol>
+    <small>
+       Want to leave a comment? Visit <a href="{{ site.comments.issue.base_url }}/{{ page.comments_issue_id }}"> this article's issue page on Github</a> (you'll need a Github account).
+    </small>
+    <small id="comments-javascript-info">
+       Please consider activating Javascript if you want comments to be loaded.
+    </small>
+  </aside>
+{% endif %}

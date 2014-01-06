@@ -40,6 +40,10 @@
         <script>/* <!-- */window.jQuery || document.write('{% javascript vendor/jquery-1.9.1.min %}')/* --> */</script>
         {% javascript app %}
 
+        {% if page.comments_issue_id %}
+            {% include comments_script.html %}
+        {% endif %}
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
