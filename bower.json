@@ -1,0 +1,25 @@
+{
+  "name": "gonzalo-bulnes.github.io",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gonzalo-bulnes/gonzalo-bulnes.github.io",
+  "authors": [
+    "Gonzalo Bulnes Guilpain <gon.bulnes@gmail.com>"
+  ],
+  "description": "A blog powered by Jekyll.",
+  "keywords": [
+    "blog",
+    "Jekyll"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "_drafts",
+    "_posts",
+    "Gemfile",
+    "Gemfile.lock",
+    "CNAME",
+    "*.html",
+    "about.md"
+  ]
+}
