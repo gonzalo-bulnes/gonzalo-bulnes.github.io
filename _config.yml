@@ -3,7 +3,7 @@ title: Gonzalo Bulnes Guilpain
 description: > # this means to ignore newlines until "baseurl:"
   Gonzalo Bulnes Guilpain's blog.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://gonzalobulnes.com"
+url: "https://gonzalo-bulnes.github.io"
 github_username:  gonzalo-bulnes
 leanpub_username: gonzalo-bulnes
 
