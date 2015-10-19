@@ -1,14 +1,15 @@
-<img alt="" class="avatar" src="{{ site.data.author.avatar }}" height="110" width="110" />
+<img alt="" class="avatar" id="author-avatar" src="{{ site.data.author.avatar }}" height="110" width="110" />
 
-<ul>
+<ul id="author-profiles">
+  <li id="author-name">{{ site.data.author.name }}</li>
+  <li>
+    <i class="icon fa fa-map-marker"></i>
+    {{ site.data.author.location }}
+  </li>
   {% for profile in site.data.author.profiles %}
     <li>
-      <i class="fa fa-{{ profile.site }}"></i>
+      <i class="icon fa fa-{{ profile.site }}"></i> {{ profile.site | capitalize }}:
       <a href="{{ profile.url }}">{{ profile.username }}</a>
     </li>
   {% endfor %}
-  <li>
-      <i class="fa fa-map-marker"></i>
-      {{ site.data.author.location }}
-    </li>
 </ul>

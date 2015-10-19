@@ -1,0 +1,41 @@
+$border-style: 1px solid $light-grey;
+
+
+$vertical-spacing: 1em;
+
+// Local constants: Skeleton constants
+$gutter: $column-margin;
+$avatar-radius: $global-radius;
+
+#author-avatar {
+  float: left;
+  margin-right: $gutter;
+  border-radius: $avatar-radius;
+}
+
+#author-profiles {
+  list-style: none;
+  border-bottom: $border-style;
+
+  li {
+    margin: 0;
+  }
+  .icon {
+    min-width: 1.2em;
+  }
+}
+
+#author-name {
+  font-weight: bold;
+  padding-bottom: $vertical-spacing !important;
+}
+
+#author-avatar {
+  margin-bottom: $vertical-spacing;
+  margin-top: $vertical-spacing;
+}
+
+#author-profiles {
+  padding-bottom: $vertical-spacing;
+  padding-top: $vertical-spacing;
+}
