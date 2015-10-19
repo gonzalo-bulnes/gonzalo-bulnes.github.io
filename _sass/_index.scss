@@ -1,7 +1,11 @@
 .feature {
+  overflow: hidden;
   padding-bottom: $vertical-spacing;
   padding-top: $vertical-spacing;
   margin-bottom: -$border-width;
+  img, p {
+    margin-bottom: inherit;
+  }
 }
 
 .feature-title {
@@ -11,4 +15,14 @@
 
 .book-title {
   padding-left: 1em;
+}
+
+#recurse .header {
+  position: absolute;
+  left: -100000px;
+}
+
+#recurse .logo {
+  float: left;
+  margin-right: $gutter;
 }
