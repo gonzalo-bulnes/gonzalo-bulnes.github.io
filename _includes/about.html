@@ -1,0 +1,14 @@
+<img alt="" class="avatar" src="{{ site.data.author.avatar }}" height="110" width="110" />
+
+<ul>
+  {% for profile in site.data.author.profiles %}
+    <li>
+      <i class="fa fa-{{ profile.site }}"></i>
+      <a href="{{ profile.url }}">{{ profile.username }}</a>
+    </li>
+  {% endfor %}
+  <li>
+      <i class="fa fa-map-marker"></i>
+      {{ site.data.author.location }}
+    </li>
+</ul>

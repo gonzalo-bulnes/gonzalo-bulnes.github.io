@@ -2,22 +2,39 @@
 layout: default
 ---
 
-<div class="home">
+<div class="container">
+  <div class="row">
+    <div class="twelve columns">
+      {% include about.html %}
+    </div>
+  </div>
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="row">
+    <div class="four columns">
+      <aside class="feature">
+        <h1 class="feature-title">Book!</h1>
+        <a class="book-title" href="{{ site.data.book.url | prepend: site.baseurl }}">
+          {{ site.data.book.title }}
+        </a>
+      </aside>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <aside>
+        <h1>Recurse Center</h1>
+        <a href="{{ "tags/recurse" | prepend: site.baseurl }}"><img src="https://d29xw0ra2h4o4u.cloudfront.net/assets/logo-no-text-ab02ba4e6d854337f7d7515e08f57520a82883ace40d22b4de689435cc211ffd.png" alt="Logo no text ab02ba4e6d854337f7d7515e08f57520a82883ace40d22b4de689435cc211ffd" height="50"></a>
+        <p>I'll be attending <a href="{{ site.data.recurse.url | prepend: site.baseurl }}">{{ site.data.recurse.name }}</a> from Sept. 28th to Dec. 17th, 2015.</p>
+      </aside>
+    </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <section class="eight columns">
+      <h1>Posts</h1>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
 </div>

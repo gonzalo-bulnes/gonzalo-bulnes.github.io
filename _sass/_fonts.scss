@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu%20Mono:400,700);
+
+@font-face {
+  font-family: "Aleo";
+  src: url("../vendor/assets/aleo/Webfont Kit/Regular/aleo-regular-webfont.eot");
+  src: local("☺"),
+    url("../vendor/assets/aleo/Webfont Kit/Regular/aleo-regular-webfont.woff") format("woff"),
+    url("../vendor/assets/aleo/Webfont Kit/Regular/aleo-regular-webfont.otf") format("truetype"),
+    url("../vendor/assets/aleo/Webfont Kit/Regular/aleo-regular-webfont.svg#aleoregular") format("svg");
+}
+@font-face {
+  font-family: "Aleo Italic";
+  src: url("../vendor/assets/aleo/Webfont Kit/Regular Italic/aleo-italic-webfont.eot");
+  src: local("☺"),
+    url("../vendor/assets/aleo/Webfont Kit/Regular Italic/aleo-italic-webfont.woff") format("woff"),
+    url("../vendor/assets/aleo/Webfont Kit/Regular Italic/aleo-italic-webfont.otf") format("truetype"),
+    url("../vendor/assets/aleo/Webfont Kit/Regular Italic/aleo-italic-webfont.svg#aleoitalic") format("svg");
+}
+@font-face {
+  font-family: "Aleo Bold";
+  src: url("../vendor/assets/aleo/Webfont Kit/Bold/aleo-bold-webfont.eot");
+  src: local("☺"),
+    url("../vendor/assets/aleo/Webfont Kit/Bold/aleo-bold-webfont.woff") format("woff"),
+    url("../vendor/assets/aleo/Webfont Kit/Bold/aleo-bold-webfont.otf") format("truetype"),
+    url("../vendor/assets/aleo/Webfont Kit/Bold/aleo-bold-webfont.svg#aleobold") format("svg");
+}
+
+$font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-bold: "Aleo Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-italic: "Aleo Italic", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;

@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% include tags.html %}
+
 <div class="post">
 
   <header class="post-header">
@@ -11,5 +14,7 @@ layout: default
   <article class="post-content">
     {{ content }}
   </article>
+
+  <p id="post-meta">{{ tags_content }}</p>
 
 </div>

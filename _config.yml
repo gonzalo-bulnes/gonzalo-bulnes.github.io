@@ -2,10 +2,10 @@
 title: Gonzalo Bulnes Guilpain
 description: > # this means to ignore newlines until "baseurl:"
   Gonzalo Bulnes Guilpain's blog.
+author: Gonzalo Bulnes Guilpain
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://gonzalo-bulnes.github.io"
-github_username:  gonzalo-bulnes
-leanpub_username: gonzalo-bulnes
+license: 'All rights reserved.'
 
 # Build settings
 exclude: ['Gemfile', 'README', 'bower.json']
