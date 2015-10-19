@@ -1,8 +1,3 @@
-$border-style: 1px solid $light-grey;
-
-
-$vertical-spacing: 1em;
-
 // Local constants: Skeleton constants
 $gutter: $column-margin;
 $avatar-radius: $global-radius;
@@ -16,6 +11,7 @@ $avatar-radius: $global-radius;
 #author-profiles {
   list-style: none;
   border-bottom: $border-style;
+  margin-bottom: -$border-width;
 
   li {
     margin: 0;
