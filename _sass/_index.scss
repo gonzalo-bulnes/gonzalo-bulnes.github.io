@@ -27,6 +27,11 @@
   margin-right: $gutter;
 }
 
+#posts-index {
+  margin-bottom: -$border-width;
+  border-bottom: $border-style;
+}
+
 #posts-index .header {
   text-align: center;
   font-size: 1.5rem;
