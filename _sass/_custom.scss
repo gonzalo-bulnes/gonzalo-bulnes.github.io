@@ -1,0 +1,90 @@
+// Links
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  text-decoration: none;
+
+  ::focus, ::hover {
+    text-decoration: underline;
+  }
+
+  &[rel="author"],
+  &[rel="license"] {
+    color: inherit;
+  }
+}
+
+// Buttons
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button.button-primary:hover,
+button.button-primary:hover {
+  color: #fff;
+  background-color: darken($primary-color, 10%);
+  border-color: darken($primary-color, 10%);
+}
+
+// Typography
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  #welcome & {
+    font-weight: 300;
+  }
+}
+
+// Custom
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+header {
+  margin-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  &#welcome {
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid $line-color;
+  }
+}
+
+h1 {
+  #home header & {
+    position: absolute;
+    left: -10000rem;
+  }
+  #home section header & {
+    position: inherit;
+  }
+}
+
+h1[data-sorting]::after {
+  content: attr(data-sorting);
+  color: darken($primary-color, 10%);
+  padding-left: .8rem;
+  font-size: .6em;
+  font-weight: 300;
+  color: inherit;
+}
+
+#toc ul {
+  margin-top: 2.5rem;
+}
+
+nav {
+  border-bottom: 1px solid $line-color;
+  a {
+    display: inline-block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1.5rem;
+  }
+}
+
+footer {
+  border-top: 1px solid $line-color;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  small {
+    line-height: 2.4rem;
+  }
+}

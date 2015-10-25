@@ -6,10 +6,8 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "../vendor/assets/normalize.css/normalize.css",
+  "custom_variables",
   "../vendor/assets/skeleton-scss/scss/skeleton",
-  "base",
   "fonts",
-  "structure",
-  "index",
-  "about"
+  "custom"
 ;

@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-07-11 16:25:19
-categories: jekyll update
+categories: code simple_token_authentication
 tags: [recurse, ruby]
 ---
 

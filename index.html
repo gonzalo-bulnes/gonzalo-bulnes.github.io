@@ -2,13 +2,18 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container" id="home">
   <div class="row">
-    <section class="twelve columns" id="posts-index">
-
+    <header class="twelve columns" id="welcome">
+      <h1>Gonzalo Bulnes Guilpain's Blog</h1>
+      <h2>Hi, I'm Gonzalo. Well, this is my blog.</h2>
+      <p>Please feel at home, there is an RSS feed below, the <a href="#toc" title="Skip to content">table of contents is here</a>.</p>
+      <a title="RSS" href="{{ site.baseurl }}/feed.xml" id="rss" class="button button-primary"><i class="fa fa-rss fa-fw"></i>&nbsp;RSS feed</a>
+    </header>
+    <section class="twelve columns" id="toc">
       <header class="header">
-        <h1 class="title">All Posts</h1>
-        <a href="{{ '/tags.html' | prepend: site.baseurl }}" class="navigation">Browse posts by tag</a>
+        <h1 data-sorting="by date">All Posts</h1>
+        <a href="{{ '/tags.html' | prepend: site.baseurl }}" class="button">Browse posts by tag</a>
       </header>
 
       <ul>
@@ -19,5 +24,6 @@ layout: default
         {% endfor %}
       </ul>
     </section>
+    <p style="height:2000px">llaa</p>
   </div>
 </div>
