@@ -4,6 +4,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Gonzalo Bulnes Guilpain's blog.
 author: Gonzalo Bulnes Guilpain
 baseurl: "" # the subpath of your site, e.g. /blog/
+tagsurl: "/tags/"
 url: "https://gonzalo-bulnes.github.io"
 license: 'All rights reserved.'
 

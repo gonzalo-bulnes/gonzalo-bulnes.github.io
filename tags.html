@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <section class="twelve columns" id="tags-index">
+
+      <header class="header">
+        <h1 class="title">Tags</h1>
+        <a href="{{ '/' | prepend: site.baseurl }}" class="navigation">Browse all posts</a>
+      </header>
+
+      <ul>
+        {% for tag in site.data.tags %}
+          <li class="tag">
+            <a href="{{ tag.slug | prepend: site.tagsurl }}">{{ tag.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>
