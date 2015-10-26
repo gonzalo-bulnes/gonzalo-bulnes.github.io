@@ -12,11 +12,15 @@ layout: default
       </header>
 
       <ol>
-        {% for tag in site.data.tags %}
-          <li class="tag">
-            <a href="{{ tag.slug | prepend: site.tagsurl | append: '#tag' }}">{{ tag.name }}</a>
-          </li>
-        {% endfor %}
+        {% if site.data.tags[0] %}
+          {% for tag in site.data.tags %}
+            <li class="tag">
+              <a href="{{ tag.slug | prepend: site.tagsurl | append: '#tag' }}">{{ tag.name }}</a>
+            </li>
+          {% endfor %}
+        {% else %}
+            <p>There are no tags at this point.</p>
+        {% endif %}
       </ol>
     </section>
   </div>

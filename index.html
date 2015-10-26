@@ -17,11 +17,15 @@ layout: default
       </header>
 
       <ol>
-        {% for post in site.posts %}
-          <li data-publication-date="{{ post.date | date: '%Y-%m-%d' }}">
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </li>
-        {% endfor %}
+        {% if site.posts[0] %}
+          {% for post in site.posts %}
+            <li data-publication-date="{{ post.date | date: '%Y-%m-%d' }}">
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        {% else %}
+          <p>There are no posts yet.</p>
+        {% endif %}
       </ol>
     </section>
   </div>
