@@ -1,0 +1,13 @@
+name: "Gonzalo Bulnes Guilpain"
+profiles:
+  - site: github
+    username:  gonzalo-bulnes
+    url:  https://github.com/gonzalo-bulnes
+  - site: leanpub
+    username: gonzalo-bulnes
+    url: https://leanpub.com/u/gonzalo-bulnes
+  - site: linkedin
+    url: https://cl.linkedin.com/in/gonzalobulnes
+
+location: "New York, NY"
+avatar: https://avatars3.githubusercontent.com/u/1619067?v=3&s=220

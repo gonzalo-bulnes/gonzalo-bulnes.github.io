@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="container" id="home">
+  <div class="row">
+    <section class="twelve columns" id="tag">
+      <header class="header">
+        <h1 data-sorting="Posts&nbsp;tagged&nbsp;as ">{{ page.tag_name }}</h1>
+        <a href="{{ '/#toc' | prepend: site.baseurl }}" class="button">Browse all posts</a>
+        <a href="{{ '/tags.html#tags' | prepend: site.baseurl }}" class="button">See all tags</a>
+      </header>
+
+      <ol>
+        {% if site.tags[page.tag] %}
+          {% for post in site.tags[page.tag] %}
+            <li data-publication-date="{{ post.date | date: '%Y-%m-%d' }}">
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        {% else %}
+            <p>There are no posts for this tag.</p>
+        {% endif %}
+      </ol>
+    </section>
+  </div>
+</div>

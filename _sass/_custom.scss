@@ -1,0 +1,210 @@
+// Links
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  text-decoration: none;
+  &:focus, &:hover {
+    text-decoration: underline;
+    &.button {
+      text-decoration: none;
+    }
+  }
+
+  footer &[rel="author"],
+  footer &[rel="license"] {
+    color: inherit;
+  }
+}
+
+// Buttons
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button.button-primary:hover,
+button.button-primary:hover {
+  color: #fff;
+  background-color: darken($primary-color, 10%);
+  border-color: darken($primary-color, 10%);
+}
+
+// Typography
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  #welcome &, #contact & {
+    font-weight: 300;
+  }
+}
+
+// Custom
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+header {
+  margin-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#welcome, #contact {
+  margin-top: 5rem;
+  padding-bottom: 3rem;
+}
+#welcome {
+  border-bottom: 1px solid $line-color;
+}
+
+h1 {
+  #home header &,
+  #about #contact & {
+    position: absolute;
+    left: -10000rem;
+  }
+  #home section header & {
+    position: inherit;
+  }
+}
+
+h1[data-sorting] {
+  &::after {
+    content: attr(data-sorting);
+    color: darken($primary-color, 10%);
+    font-size: .6em;
+    font-weight: 300;
+    color: inherit;
+  }
+  #tag & {
+    &::after {
+      content: none;
+    }
+    &::before {
+      content: attr(data-sorting);
+      color: darken($primary-color, 10%);
+      padding-right: .8rem;
+      font-size: .6em;
+      font-weight: 300;
+      color: inherit;
+    }
+  }
+}
+
+#toc, #tags, #tag {
+  ol {
+    margin-top: 2.5rem;
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px dotted $line-color;
+    position: relative;
+    margin: 0;
+    &::before {
+      content: attr(data-publication-date);
+      color: $secondary-color;
+      position: absolute;
+      top: 1.1rem;
+    }
+    &:last-child {
+      border-bottom-width: 0;
+    }
+    a {
+      display: inline-block;
+      font-weight: bold;
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      font-size: 2.4rem;
+      line-height: 1.35;
+    }
+  }
+}
+
+#tags {
+  ol {
+    margin-top: 1rem;
+  }
+  li a {
+    display: inline-block;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 2.4rem;
+    line-height: 1.35;
+  }
+}
+
+@media (#{$bp-larger-than-phablet}) {
+  #toc, #tags, #tag {
+    li {
+      &::before {
+        content: attr(data-publication-date);
+        color: $secondary-color;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+      a {
+        margin: 0 3rem;
+      }
+    }
+  }
+}
+
+nav {
+  border-bottom: 1px solid $line-color;
+  a {
+    display: inline-block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.skip {
+  display: block;
+  text-align: right;
+}
+
+footer {
+  border-top: 1px solid $line-color;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  small {
+    line-height: 2.4rem;
+  }
+}
+
+@media (#{$bp-larger-than-tablet}) {
+  .post header,
+  .post article,
+  .post #tags,
+  .skip {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.post article p:last-child {
+  &::after {
+    content: "□";
+    display: inline;
+    padding-left: .2em;
+    color: $secondary-color;
+  }
+}
+
+.post header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  margin-top: 5rem;
+}
+
+.post {
+  font-size: 1.8rem;
+  .author a[rel="author"] {
+    font-weight: bold;
+  }
+  .meta, #tags {
+    font-size: 1.5rem;
+  }
+  .author, .meta {
+    margin-bottom: .5rem;
+  }
+}

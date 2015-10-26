@@ -2,22 +2,31 @@
 layout: default
 ---
 
-<div class="home">
+<div class="container" id="home">
+  <div class="row">
+    <header class="twelve columns" id="welcome">
+      <h1>Gonzalo Bulnes Guilpain's Blog</h1>
+      <h2>Hi, I'm Gonzalo. Well, this is my blog.</h2>
+      <p>Please feel at home, there is an RSS feed below, the <a href="#toc" title="Skip to content">table of contents is here</a>.</p>
+      <a title="RSS" href="{{ site.baseurl }}/feed.xml" id="rss" class="button button-primary"><i class="fa fa-rss fa-fw"></i>&nbsp;RSS feed</a>
+    </header>
+    <section class="twelve columns" id="toc">
+      <header class="header">
+        <h1 data-sorting=" by date">All Posts</h1>
+        <a href="{{ '/tags.html#tags' | prepend: site.baseurl }}" class="button">Browse posts by tag</a>
+      </header>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+      <ol>
+        {% if site.posts[0] %}
+          {% for post in site.posts %}
+            <li data-publication-date="{{ post.date | date: '%Y-%m-%d' }}">
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        {% else %}
+          <p>There are no posts yet.</p>
+        {% endif %}
+      </ol>
+    </section>
+  </div>
 </div>

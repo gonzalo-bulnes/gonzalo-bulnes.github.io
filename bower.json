@@ -10,7 +10,7 @@
     "blog",
     "Jekyll"
   ],
-  "license": "GPL-3.0",
+  "license": "All rights reserved.",
   "ignore": [
     "**/.*",
     "bower_components",
@@ -21,5 +21,9 @@
     "CNAME",
     "*.html",
     "about.md"
-  ]
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3",
+    "skeleton-scss": "*"
+  }
 }
