@@ -9,5 +9,5 @@ url: "https://gonzalo-bulnes.github.io"
 license: 'All rights reserved.'
 
 # Build settings
-exclude: ['Gemfile', 'README', 'bower.json']
+exclude: ['Gemfile', 'README', 'bower.json', 'LICENSE']
 markdown: kramdown
