@@ -12,18 +12,17 @@ layout: default
     </header>
     <section class="twelve columns" id="toc">
       <header class="header">
-        <h1 data-sorting="by date">All Posts</h1>
-        <a href="{{ '/tags.html' | prepend: site.baseurl }}" class="button">Browse posts by tag</a>
+        <h1 data-sorting=" by date">All Posts</h1>
+        <a href="{{ '/tags.html#tags' | prepend: site.baseurl }}" class="button">Browse posts by tag</a>
       </header>
 
-      <ul>
+      <ol>
         {% for post in site.posts %}
-          <li>
+          <li data-publication-date="{{ post.date | date: '%Y-%m-%d' }}">
             <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </li>
         {% endfor %}
-      </ul>
+      </ol>
     </section>
-    <p style="height:2000px">llaa</p>
   </div>
 </div>

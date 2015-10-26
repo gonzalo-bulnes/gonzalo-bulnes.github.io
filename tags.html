@@ -4,20 +4,20 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <section class="twelve columns" id="tags-index">
+    <section class="twelve columns" id="tags">
 
       <header class="header">
         <h1 class="title">Tags</h1>
-        <a href="{{ '/' | prepend: site.baseurl }}" class="navigation">Browse all posts</a>
+        <a href="{{ '/#toc' | prepend: site.baseurl }}" class="button">Browse all posts</a>
       </header>
 
-      <ul>
+      <ol>
         {% for tag in site.data.tags %}
           <li class="tag">
-            <a href="{{ tag.slug | prepend: site.tagsurl }}">{{ tag.name }}</a>
+            <a href="{{ tag.slug | prepend: site.tagsurl | append: '#tag' }}">{{ tag.name }}</a>
           </li>
         {% endfor %}
-      </ul>
+      </ol>
     </section>
   </div>
 </div>
