@@ -1,9 +1,9 @@
 /*
- * Custom stylesheet.
- * Author: Gonzalo Bulnes Guilpain
- * See https://github.com/gonzalo-bulnes/gonzalo-bulnes.github.io
- *
- */
+* Custom stylesheet.
+* Author: Gonzalo Bulnes Guilpain
+* See https://github.com/gonzalo-bulnes/gonzalo-bulnes.github.io
+*
+*/
 
 // Links
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -12,7 +12,9 @@ a {
   text-decoration: none;
   &:focus, &:hover {
     text-decoration: underline;
-    &.button {
+    &.button,
+    footer &[rel="author"],
+    footer &[rel="license"] {
       text-decoration: none;
     }
   }
