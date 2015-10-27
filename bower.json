@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "normalize.css": "~3.0.3",
-    "skeleton-scss": "*"
+    "skeleton-scss": "*",
+    "font-awesome": "~4.4.0"
   }
 }
