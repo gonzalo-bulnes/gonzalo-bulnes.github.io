@@ -1,0 +1,34 @@
+---
+layout: post
+title:  Context from Scratch
+date:   2015-10-29
+categories: blog gardening_with_git
+tags: [recurse, gardening_with_git]
+author: Gonzalo Bulnes Guilpain
+meta: Gardening with Git
+---
+
+###### Towards a tree representation of Git repositories
+
+A **commit** is something that holds some _data_ (let's call it **D**), and has a reference to a _parent commit_. (Because the parent is older, let's draw is below the commit.)
+![Graphical representation of a commit.](../../../../../images/gardening_with_git/commit.png)
+
+We can draw that parent commit (because it's older, let call its data **C**), then it's own parent (with **B** inside maybe?), and keep iterating for a while.
+![Graphical representation of a commit and its parent commit.](../../../../../images/gardening_with_git/commits.png)
+
+We dont care really about the commits' content for now, so, before going further, let's simplify the schema by removing the **D**, **C** and **B** names.
+![Simplified graphical representation of a few commits.](../../../../../images/gardening_with_git/commits-simplified.png)
+
+Two commit can have the same parent. And have children commits on their own. Let's represent such a case.
+![Graphical representation of a commit with two parent commits.](../../../../../images/gardening_with_git/commits-tree.png)
+
+Now that we started drawing more commits, we'll want to save some space. Since we have a _convention_ about writing children commits above their parents, let's simplify the schema again by removing the arrows so we can draw larger **respositories** (that's just a fancy name for a collection of commits).
+![Graphical representation of a few commits implicitely ordered.](../../../../../images/gardening_with_git/commits-tree-simplified.png)
+
+The respository now looks a lot like a **tree**, doesn't it?
+![Comparison of a collection of commits and a natrural tree.](../../../../../images/gardening_with_git/tree.png)
+
+If there is a _tree_, there must be some **branches**! There are, indeed. But before we continue, if we'll be talking about branches, we should give them names so we know what we're talking about. Let's do that by _sticking a label_ on top of each of them.
+![A branched collection of commits with sticky labels on their top.](../../../../../images/gardening_with_git/stickers.png)
+
+Branch labels are **sticky**. That's to say while new commits are added, the label always remains on the newest one.
