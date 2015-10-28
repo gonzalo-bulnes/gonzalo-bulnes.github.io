@@ -1,4 +1,4 @@
-# - slug: recurse
-#   name: Recurse Center
-# - slug: ruby
-#   name: Ruby
+- slug: recurse
+  name: Recurse Center
+- slug: gardening_with_git
+  name: Gardening with Git
