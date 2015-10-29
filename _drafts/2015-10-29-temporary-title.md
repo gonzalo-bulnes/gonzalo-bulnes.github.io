@@ -16,7 +16,7 @@ In this post, we'll build a tree representation of Git repositories, then break 
 
 ##### Commits
 
-A **commit** is something that holds some _data_ (let's call it **D**), and has a reference to a _parent commit_. (Because the parent is older, let's draw is below the commit.)
+A **commit** is something that holds some _data_ (let's call it **D**), and has a reference to a _parent commit_. (Because the parent is older, let's draw is below the current commit.)
 ![Graphical representation of a commit.](../../../../../images/gardening_with_git/commit.png)
 
 We can draw that parent commit (because it's older, let call its data **C**), then it's own parent (with **B** inside maybe?), and keep iterating for a while.
@@ -39,7 +39,7 @@ With that modification the respository looks a lot like a **tree**, doesn't it?
 If there is a _tree_, there must be some **branches**! There are, indeed. But before we continue, if we'll be talking about branches, we should give them names so we know what we're talking about. Let's do that by _sticking a label_ on top of each of them.
 ![A branched collection of commits with sticky labels on their top.](../../../../../images/gardening_with_git/stickers.png)
 
-Branch labels are **sticky**. That's to say while new commits are added, the label always remains on the newest one.
+I said branch labels were **sticked** to the top of the branch. That's to say while new commits are added, the label always remains on the newest one.
 ![The branch label sticks to its top when commits are added.](../../../../../images/gardening_with_git/sticker.png)
 
 Now that we have a **tree representation** for Git repositories, let's make sure it fits our requirements!
@@ -50,7 +50,7 @@ Now that we have a **tree representation** for Git repositories, let's make sure
 
 ##### Breaking the model: the `git log` outcome
 
-#### Understanding the metaphor limits
+#### Interpreting the metaphor limits
 
 ##### Fixing the tree representation: domains of validity
 
