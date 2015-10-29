@@ -36,3 +36,8 @@ If there is a _tree_, there must be some **branches**! There are, indeed. But be
 ![A branched collection of commits with sticky labels on their top.](../../../../../images/gardening_with_git/stickers.png)
 
 Branch labels are **sticky**. That's to say while new commits are added, the label always remains on the newest one.
+![The branch label sticks to its top when commits are added.](../../../../../images/gardening_with_git/sticker.png)
+
+Now that we have a **tree representation** for Git repositories, let's find its limits! (Mission 1: complete.  &#10003;)
+
+
