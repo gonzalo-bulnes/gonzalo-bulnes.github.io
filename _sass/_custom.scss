@@ -53,12 +53,12 @@ header {
   padding-bottom: 1.5rem;
 }
 
-#welcome, #contact {
+#contact {
   margin-top: 5rem;
   padding-bottom: 3rem;
-}
-#welcome {
-  border-bottom: 1px solid $line-color;
+  .profile {
+    font-weight: 600;
+  }
 }
 
 h1 {
@@ -157,11 +157,18 @@ h1[data-sorting] {
 
 nav {
   border-bottom: 1px solid $line-color;
-  a {
+  a,
+  p {
     display: inline-block;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 1.5rem;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    padding-right: 1.8rem;
+    margin-bottom: 0;
+  }
+  .button {
+    float: right;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
   }
 }
 
