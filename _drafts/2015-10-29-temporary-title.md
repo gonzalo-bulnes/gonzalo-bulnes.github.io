@@ -8,7 +8,11 @@ author: Gonzalo Bulnes Guilpain
 meta: Gardening with Git
 ---
 
-###### Towards a tree representation of Git repositories
+This is the first post of the _Gardening with Git_ series. The goal of the series is to build a model for Git, good enough to predict the outcome of all Git commands, and to provide insight about conventions and practices which make Git a wonderful ally in the operation of a software craftpeople team by favorizing not only source code version control, but also knowledge sharing and communication.
+
+In this post, we'll build a tree representation of Git repositories, then break in to learn from its limits, and finally fix it to make it the first piece of our model. As an outcome, this journey will introduce the first of the most important Git concepts: context.
+
+##### Towards a tree representation of Git repositories
 
 A **commit** is something that holds some _data_ (let's call it **D**), and has a reference to a _parent commit_. (Because the parent is older, let's draw is below the commit.)
 ![Graphical representation of a commit.](../../../../../images/gardening_with_git/commit.png)
@@ -22,10 +26,10 @@ We dont care really about the commits' content for now, so, before going further
 Two commit can have the same parent. And have children commits on their own. Let's represent such a case.
 ![Graphical representation of a commit with two parent commits.](../../../../../images/gardening_with_git/commits-tree.png)
 
-Now that we started drawing more commits, we'll want to save some space. Since we have a _convention_ about writing children commits above their parents, let's simplify the schema again by removing the arrows so we can draw larger **respositories** (that's just a fancy name for a collection of commits).
+Since we have a _convention_ about writing children commits above their parents, let's simplify the schema again by removing the arrows so we can draw larger **respositories** (that's just a fancy name for a collection of commits). The relation between children and their parents is now _implicit_ but the overall schema is more readable.
 ![Graphical representation of a few commits implicitely ordered.](../../../../../images/gardening_with_git/commits-tree-simplified.png)
 
-The respository now looks a lot like a **tree**, doesn't it?
+With that modification the respository looks a lot like a **tree**, doesn't it?
 ![Comparison of a collection of commits and a natrural tree.](../../../../../images/gardening_with_git/tree.png)
 
 If there is a _tree_, there must be some **branches**! There are, indeed. But before we continue, if we'll be talking about branches, we should give them names so we know what we're talking about. Let's do that by _sticking a label_ on top of each of them.
