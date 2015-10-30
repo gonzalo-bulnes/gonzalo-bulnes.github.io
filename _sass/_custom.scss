@@ -197,7 +197,7 @@ footer {
   }
 }
 
-.post article p:last-child {
+.post article p:last-of-type {
   &::after {
     content: "□";
     display: inline;
@@ -233,6 +233,10 @@ article p:nth-child(2) {
   font-style: italic;
 }
 
+article .footnote {
+  font-size: 1.5rem;
+}
+
 p img {
   display: block;
   margin: 1rem;
@@ -253,4 +257,8 @@ p img {
     margin-bottom: 35rem;
   }
 
+}
+
+#footnotes {
+  list-style: none;
 }
