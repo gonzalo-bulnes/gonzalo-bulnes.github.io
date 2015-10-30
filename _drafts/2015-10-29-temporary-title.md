@@ -10,7 +10,7 @@ meta: Gardening with Git
 
 This is the first post of the _Gardening with Git_ series. The goal of the series is to build a model for Git, good enough to predict the outcome of the most common Git commands, and to provide insight about conventions and practices which make Git a wonderful ally in the operation of a software craftpeople team by favorizing not only source code version control, but also knowledge sharing and communication.
 
-In this post, we'll build a tree representation of Git repositories, then break it to learn from its limits, and finally fix it to make it the first piece of our model. As an outcome, this journey will introduce the first of the most important Git concepts: context.
+In this post, we'll build a tree representation of Git repositories, then break it to learn from its limitations, and finally fix it to make it the first piece of our model. As an outcome, this journey will introduce the first of the most important Git concepts: context.
 
 #### Towards a tree representation of Git repositories
 
@@ -42,15 +42,56 @@ If there is a _tree_, there must be some **branches**! There are, indeed. But be
 I said branch labels were **sticked** to the top of the branch. That's to say while new commits are added, the label always remains on the newest one.
 ![The branch label sticks to its top when commits are added.](../../../../../images/gardening_with_git/sticker.png)
 
-Now that we have a **tree representation** for Git repositories, let's make sure it fits our requirements!
+Now that we have a **tree representation** of Git repositories, let's make sure it fits our requirements!
 
 #### Validating the metaphor and finding its limits
 
+The whole point of creating a tree representation of our Git repositories was being able to **predict** the outcome of the Git commands we use (if we can't predict their outcome, we can't decide which commands to use). In this section we'll _validate_ the metaphor against a few examples and check to which extent it can be used.
+
 ##### Predicting the `git rebase` outcome
+
+Let's start with the `git rebase` command. (It may sound scary [<a href="#footnote-1" id="back-1">1</a>], but for our example no prior knowledge is necessary.) Here is our starting point: we had a `master` branch with 3 commits, then we created a new branch with three more commits. After the new branch was created, a couple of new commits were added to the `master` branch.
+![The context for the rebase test.](../../../../../images/gardening_with_git/rebase-test-context.png)
+
+According to our model for a branch, the third commit from the `master` branch appears to be the _base_ of the new branch.
+![The base of the new branch is the commit where both branches are in contact.](../../../../../images/gardening_with_git/branch-base.png)
+
+Re-basing a branch is about moving it to a new base. Consequently, the expected outcome of rebasing the new branch on top of `master` is the sequence of commits: **C**, **B**, **A**, **5**, **4**, **3**, **2**, **1**.
+![A branch moving from its original base to a new base.](../../../../../images/gardening_with_git/rebase-test-expectation.png)
+
+Let's perform the `git rebase` and compare the command outsome to our expectations. They do match our expectations, yay!
+<pre><code>
+$ git log --oneline --deco master
+d7af2c4 (master) 5
+cf2c618 4
+c76f446 3
+b8ea8d3 2
+3e57ebf 1
+$ git log --oneline add-some-colors
+a2d5ba1 (add-some-colors) C
+e3412d7 B
+7535517 A
+c76f446 3
+b8ea8d3 2
+3e57ebf 1
+$ git rebase master add-some-colors
+$ git log --oneline -3 add-some-colors
+a2d5ba1 (add-some-colors) C
+e3412d7 B
+7535517 A
+d7af2c4 (master) 5
+cf2c618 4
+c76f446 3
+b8ea8d3 2
+3e57ebf 1
+
+</code></pre>
+
+**Success**! The tree representation we built allowed us to predict the outcome of a `git rebase` operation. Let's now take a closer look at the `git log` command...
 
 ##### Breaking the model: the `git log` outcome
 
-#### Interpreting the metaphor limits
+#### Interpreting the metaphor limitations
 
 ##### Fixing the tree representation: domains of validity
 
@@ -58,4 +99,9 @@ Now that we have a **tree representation** for Git repositories, let's make sure
 
 #### Conclusion
 
+<ol id="footnotes">
+  <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the `git rebase` command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
+</ol>
 
+  [back-1]: #footnote-1
+  [should]: https://www.ietf.org/rfc/rfc2119.txt
