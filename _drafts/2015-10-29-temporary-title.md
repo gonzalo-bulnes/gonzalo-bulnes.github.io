@@ -67,7 +67,7 @@ cf2c618 4
 c76f446 3
 b8ea8d3 2
 3e57ebf 1
-$ git log --oneline add-user-profile
+$ git log --oneline --deco add-user-profile
 a2d5ba1 (add-some-colors) C
 e3412d7 B
 7535517 A
@@ -75,7 +75,7 @@ c76f446 3
 b8ea8d3 2
 3e57ebf 1
 $ git rebase master add-user-profile
-$ git log --oneline -3 add-user-profile
+$ git log --oneline --deco add-user-profile
 4f59d31 (add-user-profile) C
 59e701c B
 4be1d30 A
@@ -99,7 +99,7 @@ The `git log` command displays all the commits that compose a given branch [<a h
 
 Let's perform the `git log` command and compare its outcome to our expectations. Oh, this time our expectations are not fulfilled and the sequence of commits we got was unexpected. In fact the **C**, **B**, **A** commits were displayed, but so did the **3**, **2** and **1** commits.
 <pre><code>
-$ git log --oneline add-user-profile
+$ git log --oneline --deco add-user-profile
 a2d5ba1 (add-some-colors) C
 e3412d7 B
 7535517 A
