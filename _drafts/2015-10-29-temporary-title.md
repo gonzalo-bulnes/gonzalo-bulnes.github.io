@@ -50,7 +50,7 @@ The whole point of creating a tree representation of our Git repositories was be
 
 ##### Predicting the `git rebase` outcome
 
-Let's start with the `git rebase` command. (It may sound scary [<a href="#footnote-1" id="back-1">1</a>], but for our example no prior knowledge is necessary.) Here is our starting point: we had a `master` branch with 3 commits, then we created a new branch with three more commits. After the new branch was created, a couple of new commits were added to the `master` branch.
+Let's start with the `git rebase <new base> <branch>` command. (It may sound scary [<a href="#footnote-1" id="back-1">1</a>], but for our example no prior knowledge is necessary.) Here is our starting point: we had a `master` branch with 3 commits, then we created a new branch with three more commits. After the new branch was created, a couple of new commits were added to the `master` branch.
 ![The context for the rebase test.](../../../../../images/gardening_with_git/rebase-test-context.png)
 
 According to our model for a branch, the third commit from the `master` branch appears to be the _base_ of the new branch.
@@ -59,7 +59,7 @@ According to our model for a branch, the third commit from the `master` branch a
 Re-basing a branch is about moving it to a new base. Consequently, the expected outcome of rebasing the new branch on top of `master` is the sequence of commits: **C**, **B**, **A**, **5**, **4**, **3**, **2**, **1**.
 ![A branch moving from its original base to a new base.](../../../../../images/gardening_with_git/rebase-test-expectation.png)
 
-Let's perform the `git rebase` and compare the command outsome to our expectations. They do match our expectations, yay!
+Let's perform the `git rebase` command and compare its outcome to our expectations. The command outcome does match our expectations, yay!
 <pre><code>
 $ git log --oneline --deco master
 d7af2c4 (master) 5
@@ -67,18 +67,18 @@ cf2c618 4
 c76f446 3
 b8ea8d3 2
 3e57ebf 1
-$ git log --oneline add-some-colors
+$ git log --oneline add-user-profile
 a2d5ba1 (add-some-colors) C
 e3412d7 B
 7535517 A
 c76f446 3
 b8ea8d3 2
 3e57ebf 1
-$ git rebase master add-some-colors
-$ git log --oneline -3 add-some-colors
-a2d5ba1 (add-some-colors) C
-e3412d7 B
-7535517 A
+$ git rebase master add-user-profile
+$ git log --oneline -3 add-user-profile
+4f59d31 (add-user-profile) C
+59e701c B
+4be1d30 A
 d7af2c4 (master) 5
 cf2c618 4
 c76f446 3
@@ -90,6 +90,29 @@ b8ea8d3 2
 **Success**! The tree representation we built allowed us to predict the outcome of a `git rebase` operation. Let's now take a closer look at the `git log` command...
 
 ##### Breaking the model: the `git log` outcome
+
+Let's go back a little bit and start from the same context than we did before. Remember: we had a `master` branch with 3 commits, then we created a new branch with three more commits called `add-users-profile`. After the new branch was created, a couple of new commits were added to the `master` branch.
+![The context for the log test.](../../../../../images/gardening_with_git/log-test-context.png)
+
+The `git log` command displays all the commits that compose a given branch. The `--oneline` will ensure each commit is displayed in a single line, and is useful to save some space. The `--decorate` option will print any branch _sticky label_ that could be associated with the displayed commits. We'll use both of them.
+
+According to our model, the output can reasonnably expect from a `git log` command for the `add-user-profile` branch is the sequence of commits **C**, **B**, **A***.
+![A branch commits according to the tree representation.](../../../../../images/gardening_with_git/log-test-expectations.png)
+
+Let's perform the `git log` command and compare its outcome to our expectations... The sequence of commits we got was unexpected. In fact the **C**, **B**, **A** commits were displayed, but so did the **3**, **2** and **1** commits.
+<pre><code>
+$ git log --oneline add-user-profile
+a2d5ba1 (add-some-colors) C
+e3412d7 B
+7535517 A
+c76f446 3
+b8ea8d3 2
+3e57ebf 1
+
+</code></pre>
+
+[This time, Git doesn't seems to define branches as our tree model does.]
+![Comparison of the branches representations according to `git log` and our tree model.](../../../../../images/gardening_with_git/log-test-failure.png)
 
 #### Interpreting the metaphor limitations
 
