@@ -240,6 +240,9 @@ article .footnote {
 p img {
   display: block;
   margin: 1rem;
+  // Skeleton u-max-full-width
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .slideshow {
