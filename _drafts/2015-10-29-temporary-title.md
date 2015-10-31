@@ -94,12 +94,10 @@ b8ea8d3 2
 Let's go back a little bit and start from the same context than we did before. Remember: we had a `master` branch with 3 commits, then we created a new branch with three more commits called `add-users-profile`. After the new branch was created, a couple of new commits were added to the `master` branch.
 ![The context for the log test.](../../../../../images/gardening_with_git/log-test-context.png)
 
-The `git log` command displays all the commits that compose a given branch. The `--oneline` will ensure each commit is displayed in a single line, and is useful to save some space. The `--decorate` option will print any branch _sticky label_ that could be associated with the displayed commits. We'll use both of them.
-
-According to our model, the output can reasonnably expect from a `git log` command for the `add-user-profile` branch is the sequence of commits **C**, **B**, **A***.
+The `git log` command displays all the commits that compose a given branch [<a href="#footnote-2" id="back-2">2</a>]. According to our model, the output can reasonnably expect from a `git log` command for the `add-user-profile` branch is the sequence of commits **C**, **B**, **A**.
 ![A branch commits according to the tree representation.](../../../../../images/gardening_with_git/log-test-expectations.png)
 
-Let's perform the `git log` command and compare its outcome to our expectations... The sequence of commits we got was unexpected. In fact the **C**, **B**, **A** commits were displayed, but so did the **3**, **2** and **1** commits.
+Let's perform the `git log` command and compare its outcome to our expectations. Oh, this time our expectations are not fulfilled and the sequence of commits we got was unexpected. In fact the **C**, **B**, **A** commits were displayed, but so did the **3**, **2** and **1** commits.
 <pre><code>
 $ git log --oneline add-user-profile
 a2d5ba1 (add-some-colors) C
@@ -124,7 +122,7 @@ b8ea8d3 2
 
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the `git rebase` command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
+  <li class="footnote" id="footnote-2">[<a href="#back-2">2</a>] The <code>--oneline</code> option will ensure each commit is displayed in a single line, and is useful to save some space. The <code>--decorate</code> option will print any branch <em>sticky label</em> that could be associated with the displayed commits. We'll use both of them.</li>
 </ol>
 
-  [back-1]: #footnote-1
   [should]: https://www.ietf.org/rfc/rfc2119.txt
