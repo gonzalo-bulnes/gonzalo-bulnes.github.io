@@ -112,6 +112,12 @@ b8ea8d3 2
 [This time, Git doesn't seems to define branches as our tree model does.]
 ![Comparison of the branches representations according to `git log` and our tree model.](../../../../../images/gardening_with_git/log-test-failure.png)
 
+[What does that mean for our repository?]
+![Comparison of a Git repository representations according to `git log` and our tree model.](../../../../../images/gardening_with_git/branches.png)
+
+[Let's modify a little bit our tree representation so we can use it to predict the `git log` command outcome!]
+![A fat-tree alternative graphical representation of a git repository.](../../../../../images/gardening_with_git/alternative-tree-representation.png)
+
 #### Interpreting the metaphor limitations
 
 ##### Fixing the tree representation: domains of validity
