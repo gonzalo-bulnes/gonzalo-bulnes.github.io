@@ -6,6 +6,7 @@ categories: blog gardening_with_git
 tags: [recurse, gardening_with_git]
 author: Gonzalo Bulnes Guilpain
 meta: Gardening with Git
+teaser: Gardening with Git series. Building the notion of context from a tree representation of Git repositories.
 ---
 
 This is the first post of the _Gardening with Git_ series. The goal of the series is to build a model for Git, good enough to predict the outcome of the most common Git commands, and to provide insight about conventions and practices which make Git a wonderful ally in the operation of a software craftpeople team by favorizing not only source code version control, but also knowledge sharing and communication.
