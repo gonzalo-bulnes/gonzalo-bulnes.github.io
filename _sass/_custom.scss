@@ -197,8 +197,7 @@ footer {
 @media (#{$bp-larger-than-tablet}) {
   .post header,
   .post article,
-  .post #tags,
-  .skip {
+  .post #tags {
     max-width: 72rem;
     margin-left: auto;
     margin-right: auto;
