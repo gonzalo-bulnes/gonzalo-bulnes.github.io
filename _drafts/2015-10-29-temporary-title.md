@@ -96,7 +96,7 @@ Let's go back a little bit and start from the same context than we did before. R
 ![The context for the log test.](../../../../../images/gardening_with_git/log-test-context.png)
 
 The `git log` command displays all the commits that compose a given branch [<a href="#footnote-2" id="back-2">2</a>]. According to our model, the output can reasonnably expect from a `git log` command for the `add-user-profile` branch is the sequence of commits **C**, **B**, **A**.
-![A branch commits according to the tree representation.](../../../../../images/gardening_with_git/log-test-expectations.png)
+![A branch commits according to the tree representation.](../../../../../images/gardening_with_git/log-test-expectation.png)
 
 Let's perform the `git log` command and compare its outcome to our expectations. Oh, this time our expectations are not fulfilled and the sequence of commits we got was unexpected. In fact the **C**, **B**, **A** commits were displayed, but so did the **3**, **2** and **1** commits.
 <pre><code>
