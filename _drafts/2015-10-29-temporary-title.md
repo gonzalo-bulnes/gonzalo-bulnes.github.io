@@ -110,26 +110,63 @@ b8ea8d3 2
 
 </code></pre>
 
-[This time, Git doesn't seems to define branches as our tree model does.]
+This time, our tree representation doesn't reflect **the way Git defines branches**. While our tree model suggests that a branch starts at the branch base, `git log` displays all the commits from the top of the branch down to the initial commit.
 ![Comparison of the branches representations according to `git log` and our tree model.](../../../../../images/gardening_with_git/log-test-failure.png)
 
-[What does that mean for our repository?]
+Let's acknowledge that fact and draw our entire repository using that branch definition. That new repository representation doesn't look much like a tree anymore, but it matches closely the `git log` **behaviour**, and would allow us to predict the command outcome accurately.
 ![Comparison of a Git repository representations according to `git log` and our tree model.](../../../../../images/gardening_with_git/branches.png)
 
-[Let's modify a little bit our tree representation so we can use it to predict the `git log` command outcome!]
-![A fat-tree alternative graphical representation of a git repository.](../../../../../images/gardening_with_git/alternative-tree-representation.png)
+**So, what's the balance?** On the first hand, our tree representation was really useful to predict the `git rebase` outcome, but it was quite missleading when dealing with `git log`. On the other hand, the repository representation which does match the `git log` behaviour is really simple, but it doesn't seem to provide any clue about how the `git rebase` command may behave and doesn't tell much about _several commits having the same parent_.
 
 #### Interpreting the metaphor limitations
 
 ##### Fixing the tree representation: domains of validity
 
+Let's create an **alternative** tree representation that we can use it to predict the `git log` command outcome. Pretty neat, isn't it? That a tree, no doubt about that, and a good complement to tree representation which we use to predict the `git rebase` behaviour.
+![A fat-tree alternative graphical representation of a git repository.](../../../../../images/gardening_with_git/alternative-tree-representation.png)
+
+Now, we have **two trees**: a _skinny_ tree and a _fat_ tree, which both model properly the Git behaviour of different kinds of commands. Understanding the difference between both kinds of commands is the clue to determine **which representation we should use** to predict the output of _any_ given Git command.
+![The two tree representations of a git repository used to predict the Git commands outcome.](../../../../../images/gardening_with_git/tree-representations.png)
+
+What makes the `git rebase` and `git log` commands different? The former deals with branches in a _collective_ manner, while the latter does treat them _individually_.
+
+| Operations dealing with branches collectively | Operations on individual branches  |
+|:----------:|:-------------:|
+| `rebase`   | `log`         |
+| `merge`    | `branch`      |
+|            | `checkout`    |
+
+Let's take an **example** and predict the outcome of a `git merge` operation [<a href="#footnote-3" id="back-3">3</a>]. To do that, let's suppose we had a `master` branch with 3 commits, then we created a new branch with three more commits called `add-users-profile`.
+
+Do notice how arbitrary branch representations are: since we sticked a label on top of each branch, there is no need _a priori_ to represent them anyhow but in line. However, we want to predict the outcome of merging `add-user-profile` into `master`, and we know that `git merge` deals with two branches, so we adopt a **skinny tree representation** to help us reasonning about it.
+![The context for the merge test.](../../../../../images/gardening_with_git/merge-test-context.png)
+
+Once our branches are representated correctly, setting the **expectations** becomes easy: the `git merge` operation will first add the content of `add-user-profile` to the `master` branch, then create a new _merge commit_ on top of it [<a href="#footnote-4" id="back-4">4</a>].
+
+<pre><code>
+$ git merge --no-ff add-user-profile master
+$ git log --oneline --deco master
+7a2389d (master) Merge branch 'add-user-profile'
+a2d5ba1 (add-user-profile) C
+e3412d7 B
+7535517 A
+c76f446 3
+b8ea8d3 2
+3e57ebf 1
+
+</code></pre>
+
 ##### Notion of context
+
+
 
 #### Conclusion
 
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the `git rebase` command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
   <li class="footnote" id="footnote-2">[<a href="#back-2">2</a>] The <code>--oneline</code> option will ensure each commit is displayed in a single line, and is useful to save some space. The <code>--decorate</code> option will print any branch <em>sticky label</em> that could be associated with the displayed commits. We'll use both of them.</li>
+  <li class="footnote" id="footnote-3">[<a href="#back-3">3</a>] For now, let's focus on a merging operation which cannot raise any conflict. At this point, we'll still missing some information to deal correctly with conflicts, but we'll talk about them in the next post of this series.</li>
+  <li class="footnote" id="footnote-4">[<a href="#back-4">4</a>] In this example, the merge commit will be empty (more on that in a next post). Since Git avoids creating empty commits by default, we'll use the <code>--no-fast-forward</code> option to ensure it gets  created.</li>
 </ol>
 
   [should]: https://www.ietf.org/rfc/rfc2119.txt
