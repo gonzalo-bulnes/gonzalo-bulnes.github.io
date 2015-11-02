@@ -122,13 +122,13 @@ Let's acknowledge that fact and draw our entire repository using that branch def
 
 ##### Fixing the tree representation: domains of validity
 
-Let's create an **alternative** tree representation that we can use it to predict the `git log` command outcome. Pretty neat, isn't it? That a tree, no doubt about that, and a good complement to tree representation which we use to predict the `git rebase` behaviour.
+Let's create an **alternative** tree representation that we can use it to predict the `git log` command outcome. Pretty neat, isn't it? That a tree, no doubt about that, and a good complement to tree representation which we already use to predict the `git rebase` behaviour.
 ![A fat-tree alternative graphical representation of a git repository.](../../../../../images/gardening_with_git/alternative-tree-representation.png)
 
-Now, we have **two trees**: a _skinny_ tree and a _fat_ tree, which both model properly the Git behaviour of different kinds of commands. Understanding the difference between both kinds of commands is the clue to determine **which representation we should use** to predict the output of _any_ given Git command.
+Now, we have **two trees**: a _skinny_ tree and a _fat_ tree, which both model properly the Git behaviour of different kinds of commands. Understanding the difference between both kinds of commands is the key to determine **which representation we should use** to predict the output of _any_ given Git command.
 ![The two tree representations of a git repository used to predict the Git commands outcome.](../../../../../images/gardening_with_git/tree-representations.png)
 
-What makes the `git rebase` and `git log` commands different? The former deals with branches in a _collective_ manner, while the latter does treat them _individually_.
+What makes the `git rebase` and `git log` commands different? The former deals with branches in a _collective_ manner, while the latter does treat them _individually_. You only need _one_ branch to use `git log`, but you need at least two of them to perform a `git rebase` operation.
 
 | Operations dealing with branches collectively | Operations on individual branches  |
 |:----------:|:-------------:|
@@ -136,7 +136,23 @@ What makes the `git rebase` and `git log` commands different? The former deals w
 | `merge`    | `branch`      |
 |            | `checkout`    |
 
+It happens the **skinny tree representation** is a valid model for any Git command that deals with branches _collectivellly_. And the **fat tree representation** is a valid one for any Git command that operates on _individual_ branches [<a href="#footnote-3" id="back-3">3</a>].
+![The domains of validity of both tree representations of a git repository used to predict the Git commands outcome.](../../../../../images/gardening_with_git/tree-representations-domains.png)
+
 ##### Notion of context
+
+So what's the big difference between considering the Git branches **individually** or **collectively**? A branch, as the `git log` command shows, is composed by **all** the commits from its very top down to the repository's _initial commit_. It is a whole single sequence of commits. That's why, when considered individually, the _fat tree representation_ is the one that works best.
+
+When you add a **second branch** to the scenario, however, something amazing happens. Instead of getting _two_ distinct sequences of commits, you get **three** of them:
+
+1. all the commits that are unique to the **first** branch
+1. all the commits which are unique to the **second** branch
+1. all the commits **both branches have in common**
+
+Much as like people in a team, often when you consider a branch among other branches, you are interested in what that branch has which is _unique_. However, what makes a branch unique is not enough to define it entirely. A person is not only what makes her unique, but also everything she shares with others: it's **culture**. A branch is not only what makes it unique, but also what it shares with other branches: its **context**.
+
+And exactly as with people, you won't get the best from what makes a branch unique unless you understand in which context it is evolving.
+![The definition of the context for a feature branch.](../../../../../images/gardening_with_git/feature-context.png)
 
 
 
@@ -145,6 +161,7 @@ What makes the `git rebase` and `git log` commands different? The former deals w
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the `git rebase` command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
   <li class="footnote" id="footnote-2">[<a href="#back-2">2</a>] The <code>--oneline</code> option will ensure each commit is displayed in a single line, and is useful to save some space. The <code>--decorate</code> option will print any branch <em>sticky label</em> that could be associated with the displayed commits. We'll use both of them.</li>
+   <li class="footnote" id="footnote-3">[<a href="#back-3">3</a>] That's to say you can predict the behaviour of any command that deals with branches <em>collectively</em> using the <strong>skinny tree representation</strong>. And you can predict the behaviour of any command that operates on <em>individual</em> branches using the <strong>fat tree representation</strong>.</li>
 </ol>
 
   [should]: https://www.ietf.org/rfc/rfc2119.txt
