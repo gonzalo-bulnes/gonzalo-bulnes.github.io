@@ -141,6 +141,7 @@ h1[data-sorting] {
 @media (#{$bp-larger-than-phablet}) {
   #toc, #tags, #tag {
     li {
+      position: realtive;
       &::before {
         content: attr(data-publication-date);
         color: $secondary-color;
@@ -150,6 +151,13 @@ h1[data-sorting] {
       }
       a {
         margin: 0 3rem;
+        position: relative;
+        z-index: 1;
+      }
+      p {
+        position: relative;
+        z-index: 0;
+        margin: -3rem 0 0 11rem;
       }
     }
   }
