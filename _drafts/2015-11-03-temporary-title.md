@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Context from Scratch
-date:   2015-10-29
+date:   2015-11-05
 categories: blog gardening_with_git
-tags: [recurse, gardening_with_git]
+tags: [recurse_center, gardening_with_git]
 author: Gonzalo Bulnes Guilpain
 meta: Gardening with Git
 teaser: Gardening with Git series. Building the notion of context from a tree representation of Git repositories.
@@ -143,20 +143,46 @@ It happens the **skinny tree representation** is a valid model for any Git comma
 
 So what's the big difference between considering the Git branches **individually** or **collectively**? A branch, as the `git log` command shows, is composed by **all** the commits from its very top, down to the repository's _initial commit_. It is a whole single sequence of commits. That's why, when considered individually, the _fat tree representation_ is the one that works best.
 
-When you add a **second branch** to the scenario, however, something amazing happens. Instead of getting _two_ distinct sequences of commits, you get **three** of them:
+<!-- When you add a **second branch** to the scenario, however, something amazing happens. Instead of getting _two_ distinct sequences of commits, you get **three** of them: -->
+
+When you add a **second branch** to the scenario (let's call it the _reference_ branch), something amazing happens. Instead of getting _two_ distinct sequences of commits, you get **three** of them:
+
+<!-- (Let's call that branch the _reference_ branch by the way.) -->
 
 1. all the commits which are unique to the **first** branch
-1. all the commits which are unique to the **second** branch
+1. all the commits which are unique to the second branch (the **reference** branch)
 1. all the commits that **both branches have in common**
 
-Much as like people in a team, often when you consider a branch among other branches you are interested in what that branch has which is _unique_. However, what makes a branch unique is not enough to define it entirely. A person is not only what makes her unique, but also everything she shares with others: it's **culture**. A branch is not only what makes it unique, but also what it shares with other branches: its **context**.
+Much as like people in a team, often when you consider a branch among other branches you are interested in what that branch has which is _unique_. However, what makes a branch unique is not enough to define it entirely. A person is not only what makes her unique, but also everything she shares with others: her **culture**. A branch is not only what makes it unique, but also what it shares with other branches: its **context**.
 
 And exactly as with people, you won't get the best from what makes a branch unique unless you understand in which context it is evolving.
 ![The definition of the context for a feature branch.](../../../../../images/gardening_with_git/feature-context.png)
 
+Because of the importance of being able to **identify the context** when you're working with branches, let's take a few example to stress the following point: _the context depends on_ **both** _(all) the branches which are involved in the scenario_. Therefore, there is no such thing as a branch context _per se_ and the context will be different if you compare your branch to one branch or another. As we can observe, the _skinny tree representation_ is particulary fitted to reason about the context-dependent scenarios.
+![Different contexts for a branch in different scenarios.](../../../../../images/gardening_with_git/example-contexts.png)
 
+Let's hold that thought: _depending on the reference branch we choose, what we call the <em>context</em> and what we call our <em>feature</em> will change slightly_.
+
+That idea of a **moving** context, which changes depending on our goals as for the branch opens the way to a _generalization_ of the context concept to a _single_ branch: once that we identified the commits we're focusing on (which we define as being _the&nbsp;feature_), each and every single commit down to the _initial commit_ are that feature's **context**.
+
+To recapitulate:
+
+1. the context depends on **both** (all) the branches which are involved in the scenario (so there is no such thing as a branch context _per-se_, and the context will be different if you compare your branch to one branch or another)
+1. the concept of context can be generalized to a single branch: if you're interested in a given set of commits from a branch (let's call that sequence the _feature_), all the commits of that branch down the parent relationship are the context in which your feature is defined
+
+Identifying the current context when working with branches is something that you'll do often and which becomes easier with practice, so don't worry too much about that! Also, we'll see more examples in the next posts of this series.
 
 #### Conclusion
+
+Let's wrap up. We've built a tree representation of a Git repository, which allowed us to determine the outcome of some Git commands. Then we streched it to find its limitations and we worked around them.
+
+These limitations were caused by a fundamental difference between operations which involve several branches, for which we were able to define a concept of _context_, and those which involve a single branch, and therefore are free of any context.
+
+With that in mind, the alternative tree representation we built to work around the so-called _skinny tree representation_ limitations made sense in a more general way, beyond its initial workaround status. That's why we'll talk of a _tree representation_ in a general way from now on, understanding that one of the two alternative representations does apply, depending on the Git commands we're working with.
+
+Finally, we were able to put together a generalization of the context idea for isolated branches, which we'll find useful when talking about context adaptations.
+
+In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions. Keep [tuned][rss]!
 
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the <code>git rebase</code> command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
@@ -165,3 +191,4 @@ And exactly as with people, you won't get the best from what makes a branch uniq
 </ol>
 
   [should]: https://www.ietf.org/rfc/rfc2119.txt
+  [rss]: ../../../lala
