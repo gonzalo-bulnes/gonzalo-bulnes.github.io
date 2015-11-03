@@ -69,7 +69,7 @@ c76f446 3
 b8ea8d3 2
 3e57ebf 1
 $ git log --oneline --deco add-user-profile
-a2d5ba1 (add-some-colors) C
+a2d5ba1 (add-user-profile) C
 e3412d7 B
 7535517 A
 c76f446 3
@@ -95,13 +95,13 @@ b8ea8d3 2
 Let's go back a little bit and start from the same context than we did before. Remember: we had a `master` branch with 3 commits, then we created a new branch with three more commits called `add-users-profile`. After the new branch was created, a couple of new commits were added to the `master` branch.
 ![The context for the log test.](../../../../../images/gardening_with_git/log-test-context.png)
 
-The `git log` command displays all the commits that compose a given branch [<a href="#footnote-2" id="back-2">2</a>]. According to our model, the output can reasonnably expect from a `git log` command for the `add-user-profile` branch is the sequence of commits **C**, **B**, **A**.
+The `git log` command displays all the commits that compose a given branch [<a href="#footnote-2" id="back-2">2</a>]. According to our model, the output that we can reasonably expect from a `git log` command for the `add-user-profile` branch is the sequence of commits **C**, **B**, **A**.
 ![A branch commits according to the tree representation.](../../../../../images/gardening_with_git/log-test-expectation.png)
 
 Let's perform the `git log` command and compare its outcome to our expectations. Oh, this time our expectations are not fulfilled and the sequence of commits we got was unexpected. In fact the **C**, **B**, **A** commits were displayed, but so did the **3**, **2** and **1** commits.
 <pre><code>
 $ git log --oneline --deco add-user-profile
-a2d5ba1 (add-some-colors) C
+a2d5ba1 (add-user-profile) C
 e3412d7 B
 7535517 A
 c76f446 3
@@ -110,7 +110,7 @@ b8ea8d3 2
 
 </code></pre>
 
-This time, our tree representation doesn't reflect **the way Git defines branches**. While our tree model suggests that a branch starts at the branch base, `git log` displays all the commits from the top of the branch down to the initial commit.
+This time, our tree representation didn't reflect **the way Git defines branches**. While our tree model suggests that a branch starts at the branch base, `git log` displays all the commits from the top of the branch down to the initial commit.
 ![Comparison of the branches representations according to `git log` and our tree model.](../../../../../images/gardening_with_git/log-test-failure.png)
 
 Let's acknowledge that fact and draw our entire repository using that branch definition. That new repository representation doesn't look much like a tree anymore, but it matches closely the `git log` **behaviour**, and would allow us to predict the command outcome accurately.
@@ -122,7 +122,7 @@ Let's acknowledge that fact and draw our entire repository using that branch def
 
 ##### Fixing the tree representation: domains of validity
 
-Let's create an **alternative** tree representation that we can use it to predict the `git log` command outcome. Pretty neat, isn't it? That a tree, no doubt about that, and a good complement to tree representation which we already use to predict the `git rebase` behaviour.
+Let's create an **alternative** tree representation that we can use it to predict the `git log` command outcome. Pretty neat, isn't it? It _is_ a tree, no doubt about that, and also a good complement to tree representation which we already use to predict the `git rebase` behaviour.
 ![A fat-tree alternative graphical representation of a git repository.](../../../../../images/gardening_with_git/alternative-tree-representation.png)
 
 Now, we have **two trees**: a _skinny_ tree and a _fat_ tree, which both model properly the Git behaviour of different kinds of commands. Understanding the difference between both kinds of commands is the key to determine **which representation we should use** to predict the output of _any_ given Git command.
@@ -141,15 +141,15 @@ It happens the **skinny tree representation** is a valid model for any Git comma
 
 ##### Notion of context
 
-So what's the big difference between considering the Git branches **individually** or **collectively**? A branch, as the `git log` command shows, is composed by **all** the commits from its very top down to the repository's _initial commit_. It is a whole single sequence of commits. That's why, when considered individually, the _fat tree representation_ is the one that works best.
+So what's the big difference between considering the Git branches **individually** or **collectively**? A branch, as the `git log` command shows, is composed by **all** the commits from its very top, down to the repository's _initial commit_. It is a whole single sequence of commits. That's why, when considered individually, the _fat tree representation_ is the one that works best.
 
 When you add a **second branch** to the scenario, however, something amazing happens. Instead of getting _two_ distinct sequences of commits, you get **three** of them:
 
-1. all the commits that are unique to the **first** branch
+1. all the commits which are unique to the **first** branch
 1. all the commits which are unique to the **second** branch
-1. all the commits **both branches have in common**
+1. all the commits that **both branches have in common**
 
-Much as like people in a team, often when you consider a branch among other branches, you are interested in what that branch has which is _unique_. However, what makes a branch unique is not enough to define it entirely. A person is not only what makes her unique, but also everything she shares with others: it's **culture**. A branch is not only what makes it unique, but also what it shares with other branches: its **context**.
+Much as like people in a team, often when you consider a branch among other branches you are interested in what that branch has which is _unique_. However, what makes a branch unique is not enough to define it entirely. A person is not only what makes her unique, but also everything she shares with others: it's **culture**. A branch is not only what makes it unique, but also what it shares with other branches: its **context**.
 
 And exactly as with people, you won't get the best from what makes a branch unique unless you understand in which context it is evolving.
 ![The definition of the context for a feature branch.](../../../../../images/gardening_with_git/feature-context.png)
@@ -159,7 +159,7 @@ And exactly as with people, you won't get the best from what makes a branch uniq
 #### Conclusion
 
 <ol id="footnotes">
-  <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the `git rebase` command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
+  <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the <code>git rebase</code> command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
   <li class="footnote" id="footnote-2">[<a href="#back-2">2</a>] The <code>--oneline</code> option will ensure each commit is displayed in a single line, and is useful to save some space. The <code>--decorate</code> option will print any branch <em>sticky label</em> that could be associated with the displayed commits. We'll use both of them.</li>
    <li class="footnote" id="footnote-3">[<a href="#back-3">3</a>] That's to say you can predict the behaviour of any command that deals with branches <em>collectively</em> using the <strong>skinny tree representation</strong>. And you can predict the behaviour of any command that operates on <em>individual</em> branches using the <strong>fat tree representation</strong>.</li>
 </ol>
