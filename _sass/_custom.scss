@@ -144,6 +144,14 @@ h1[data-sorting] {
   }
 }
 
+#toc, #tags, #tag li {
+  .teaser {
+    position: relative;
+    z-index: 0;
+    margin: -3rem 0 0;
+  }
+}
+
 @media (#{$bp-larger-than-phablet}) {
   #toc, #tags, #tag {
     li {
@@ -160,10 +168,10 @@ h1[data-sorting] {
         position: relative;
         z-index: 1;
       }
-      p {
+      .teaser {
         position: relative;
         z-index: 0;
-        margin: -3rem 0 0 11rem;
+        margin-left: 11rem;
       }
     }
   }
