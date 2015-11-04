@@ -277,6 +277,9 @@ p img {
 
 #footnotes {
   list-style: none;
+  margin-top: 5rem;
+  border-top: 1px dashed $light-grey;
+  padding-top: 2.5rem;
 }
 
 em em {
