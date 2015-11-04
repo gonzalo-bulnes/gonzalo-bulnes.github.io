@@ -90,7 +90,7 @@ b8ea8d3 2
 
 **Success**! The tree representation we built allowed us to predict the outcome of a `git rebase` operation. Let's now take a closer look at the `git log` command...
 
-##### Breaking the model: the `git log` outcome
+### Breaking the model: the `git log` outcome
 
 Let's go back a little bit and start from the same context than we did before. Remember: we had a `master` branch with 3 commits, then we created a new branch with three more commits called `add-users-profile`. After the new branch was created, a couple of new commits were added to the `master` branch.
 ![The context for the log test.](../../../../../images/gardening_with_git/log-test-context.png)
