@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Context from Scratch
-date:   2015-10-29
+date:   2015-11-05
 categories: blog gardening_with_git
-tags: [recurse, gardening_with_git]
+tags: [recurse_center, gardening_with_git]
 author: Gonzalo Bulnes Guilpain
 meta: Gardening with Git
 teaser: Gardening with Git series. Building the notion of context from a tree representation of Git repositories.
@@ -178,11 +178,11 @@ Let's wrap up. We've built a tree representation of a Git repository, which allo
 
 These limitations were caused by a fundamental difference between operations which involve several branches, for which we were able to define a concept of _context_, and those which involve a single branch, and therefore are free of any context.
 
-With that in mind, the alternative tree representation we built to work around the so-called _skinny tree representation_ limitations made sense in a more general way, beyond its initial workaround status. We'll talk of a _tree representation_ in a general way from now on, understanding that one of the two alternative representations does apply, depending on the Git commands we're working with.
+With that in mind, the alternative tree representation we built to work around the so-called _skinny tree representation_ limitations made sense in a more general way, beyond its initial workaround status. That's why we'll talk of a _tree representation_ in a general way from now on, understanding that one of the two alternative representations does apply, depending on the Git commands we're working with.
 
-Finally, we were even able to put together a generalization of the context idea for isolated branches!
+Finally, we were able to put together a generalization of the context idea for isolated branches, which we'll find useful when talking about context adaptations.
 
-In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions.
+In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions. Keep [tuned][rss]!
 
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the <code>git rebase</code> command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
@@ -191,3 +191,4 @@ In the next post of this series, the concept of context will allow us to underst
 </ol>
 
   [should]: https://www.ietf.org/rfc/rfc2119.txt
+  [rss]: ../../../lala
