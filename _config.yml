@@ -11,6 +11,7 @@ license: 'All rights reserved.'
 # Build settings
 exclude: ['Gemfile', 'README', 'bower.json', 'LICENSE']
 markdown: kramdown
+permalink: none
 sass:
   sass_dir: _sass
   style: compress
