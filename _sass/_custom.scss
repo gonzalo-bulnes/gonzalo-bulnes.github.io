@@ -282,3 +282,14 @@ p img {
 em em {
   font-style: normal;
 }
+
+.post {
+  counter-reset: section;
+  & h2::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+  }
+  h2:last-of-type::before {
+    content: ""
+  }
+}
