@@ -33,7 +33,7 @@ Since we have a _convention_ about writing children commits above their parents,
 ![Graphical representation of a few commits implicitely ordered.](../../../../../images/gardening_with_git/commits-tree-simplified.png)
 
 With that modification the respository looks a lot like a **tree**, doesn't it?
-![Comparison of a collection of commits and a natrural tree.](../../../../../images/gardening_with_git/tree.png)
+![Comparison of a collection of commits and a natural tree.](../../../../../images/gardening_with_git/tree.png)
 
 ### Branches
 
@@ -164,11 +164,12 @@ Because of the importance of being able to **identify the context** when you're 
 Let's hold that thought: _depending on the reference branch we choose, what we call the <em>context</em> and what we call our <em>feature</em> will change slightly_.
 
 That idea of a **moving** context, which changes depending on our goals as for the branch opens the way to a _generalization_ of the context concept to a _single_ branch: once that we identified the commits we're focusing on (which we define as being _the&nbsp;feature_), each and every single commit down to the _initial commit_ are that feature's **context**.
+![The generalization of the context idea to a single branch.](../../../../../images/gardening_with_git/single-branch-context-generalization.png)
 
 To recapitulate:
 
 1. the context depends on **both** (all) the branches which are involved in the scenario (so there is no such thing as a branch context _per-se_, and the context will be different if you compare your branch to one branch or another)
-1. the concept of context can be generalized to a single branch: if you're interested in a given set of commits from a branch (let's call that sequence the _feature_), all the commits of that branch down the parent relationship are the context in which your feature is defined
+1. the concept of context can be generalized to a single branch: if you're interested in a given set of commits from a branch (let's call that sequence the _feature_), all the commits from that branch down the parent relationship are the context in which your feature is defined
 
 Identifying the current context when working with branches is something that you'll do often and which becomes easier with practice, so don't worry too much about that! Also, we'll see more examples in the next posts of this series.
 
