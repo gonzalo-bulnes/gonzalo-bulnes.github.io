@@ -9,7 +9,7 @@ meta: Gardening with Git
 teaser: Gardening with Git series. Building the notion of context from a tree representation of Git repositories.
 ---
 
-This is the first post of the _Gardening with Git_ series. The goal of the series is to build a model for Git, which we want that model to be good enough to predict the outcome of the most common Git commands. I also hope to provide insight about conventions and practices which allow to use Git not only for source version control, but also for knowledge sharing and communication. Experience shows that using Git that way makes it a wonderful ally in the operation of a team of software craftpeople.
+This is the first post of the _Gardening with Git_ series. The goal of the series is to build a model for Git and to provide insight about conventions and practices which allow to use Git not only for source version control, but also for knowledge sharing and communication. While the conventions and practices should make Git a wonderful ally in the operation of a software craftspeople team, we want the model to be good enough to predict the outcome of the most common git commands.
 
 In this post, we'll first build a tree representation of Git repositories, then break it to learn from its limitations, and finally fix it to make it the first piece of our model. As an outcome, this journey will introduce the first of the most important Git concepts: context.
 
