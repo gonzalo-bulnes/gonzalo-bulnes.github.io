@@ -13,9 +13,9 @@ This is the first post of the _Gardening with Git_ series. The goal of the serie
 
 In this post, we'll build a tree representation of Git repositories, then break it to learn from its limitations, and finally fix it to make it the first piece of our model. As an outcome, this journey will introduce the first of the most important Git concepts: context.
 
-#### Towards a tree representation of Git repositories
+## Towards a tree representation of Git repositories
 
-##### Commits
+### Commits
 
 A **commit** is something that holds some _data_ (let's call it **D**), and has a reference to a _parent commit_. (Because the parent is older, let's draw is below the current commit.)
 ![Graphical representation of a commit.](../../../../../images/gardening_with_git/commit.png)
@@ -35,7 +35,7 @@ Since we have a _convention_ about writing children commits above their parents,
 With that modification the respository looks a lot like a **tree**, doesn't it?
 ![Comparison of a collection of commits and a natrural tree.](../../../../../images/gardening_with_git/tree.png)
 
-##### Branches
+### Branches
 
 If there is a _tree_, there must be some **branches**! There are, indeed. But before we continue, if we'll be talking about branches, we should give them names so we know what we're talking about. Let's do that by _sticking a label_ on top of each of them.
 ![A branched collection of commits with sticky labels on their top.](../../../../../images/gardening_with_git/stickers.png)
@@ -45,11 +45,11 @@ I said branch labels were **sticked** to the top of the branch. That's to say wh
 
 Now that we have a **tree representation** of Git repositories, let's make sure it fits our requirements!
 
-#### Validating the metaphor and finding its limits
+## Validating the metaphor and finding its limits
 
 The whole point of creating a tree representation of our Git repositories was being able to **predict** the outcome of the Git commands we use (if we can't predict their outcome, we can't decide which commands to use). In this section we'll _validate_ the metaphor against a few examples and check to which extent it can be used.
 
-##### Predicting the `git rebase` outcome
+### Predicting the `git rebase` outcome
 
 Let's start with the `git rebase <new base> <branch>` command. (It may sound scary [<a href="#footnote-1" id="back-1">1</a>], but for our example no prior knowledge is necessary.) Here is our starting point: we had a `master` branch with 3 commits, then we created a new branch with three more commits. After the new branch was created, a couple of new commits were added to the `master` branch.
 ![The context for the rebase test.](../../../../../images/gardening_with_git/rebase-test-context.png)
@@ -118,9 +118,9 @@ Let's acknowledge that fact and draw our entire repository using that branch def
 
 **So, what's the balance?** On the first hand, our tree representation was really useful to predict the `git rebase` outcome, but it was quite missleading when dealing with `git log`. On the other hand, the repository representation which does match the `git log` behaviour is really simple, but it doesn't seem to provide any clue about how the `git rebase` command may behave and doesn't tell much about _several commits having the same parent_.
 
-#### Interpreting the metaphor limitations
+## Interpreting the metaphor limitations
 
-##### Fixing the tree representation: domains of validity
+### Fixing the tree representation: domains of validity
 
 Let's create an **alternative** tree representation that we can use it to predict the `git log` command outcome. Pretty neat, isn't it? It _is_ a tree, no doubt about that, and also a good complement to tree representation which we already use to predict the `git rebase` behaviour.
 ![A fat-tree alternative graphical representation of a git repository.](../../../../../images/gardening_with_git/alternative-tree-representation.png)
@@ -139,7 +139,7 @@ What makes the `git rebase` and `git log` commands different? The former deals w
 It happens the **skinny tree representation** is a valid model for any Git command that deals with branches _collectivellly_. And the **fat tree representation** is a valid one for any Git command that operates on _individual_ branches [<a href="#footnote-3" id="back-3">3</a>].
 ![The domains of validity of both tree representations of a git repository used to predict the Git commands outcome.](../../../../../images/gardening_with_git/tree-representations-domains.png)
 
-##### Notion of context
+### Notion of context
 
 So what's the big difference between considering the Git branches **individually** or **collectively**? A branch, as the `git log` command shows, is composed by **all** the commits from its very top, down to the repository's _initial commit_. It is a whole single sequence of commits. That's why, when considered individually, the _fat tree representation_ is the one that works best.
 
@@ -172,7 +172,7 @@ To recapitulate:
 
 Identifying the current context when working with branches is something that you'll do often and which becomes easier with practice, so don't worry too much about that! Also, we'll see more examples in the next posts of this series.
 
-#### Conclusion
+## Conclusion
 
 Let's wrap up. We've built a tree representation of a Git repository, which allowed us to determine the outcome of some Git commands. Then we streched it to find its limitations and we worked around them.
 
