@@ -159,7 +159,7 @@ And exactly as with people, you won't get the best from what makes a branch uniq
 ![The definition of the context for a feature branch.](../../../../../images/gardening_with_git/feature-context.png)
 
 Because of the importance of being able to **identify the context** when you're working with branches, let's take a few example to stress the following point: _the context depends on_ **both** _(all) the branches which are involved in the scenario_. Therefore, there is no such thing as a branch context _per se_ and the context will be different if you compare your branch to one branch or another. As we can observe, the _skinny tree representation_ is particulary fitted to reason about the context-dependent scenarios.
-![Different contexts for a branch in different scenarios.](../../../../../images/gardening_with_git/branch-contexts.png)
+![Different contexts for a branch in different scenarios.](../../../../../images/gardening_with_git/example-contexts.png)
 
 Let's hold that thought: _depending on the reference branch we choose, what we call the <em>context</em> and what we call our <em>feature</em> will change slightly_.
 
@@ -170,13 +170,17 @@ To recapitulate:
 1. the context depends on **both** (all) the branches which are involved in the scenario (so there is no such thing as a branch context _per-se_, and the context will be different if you compare your branch to one branch or another)
 1. the concept of context can be generalized to a single branch: if you're interested in a given set of commits from a branch (let's call that sequence the _feature_), all the commits of that branch down the parent relationship are the context in which your feature is defined
 
+Identifying the current context when working with branches is something that you'll do often and which becomes easier with practice, so don't worry too much about that! Also, we'll see more examples in the next posts of this series.
+
 #### Conclusion
 
-We've built a tree representation of a Git repository, which allowed us to determine the outcome of some Git commands. We then streched it to find its limitations and work around them.
+Let's wrap up. We've built a tree representation of a Git repository, which allowed us to determine the outcome of some Git commands. Then we streched it to find its limitations and we worked around them.
 
-These limitations were caused by a fundamental difference between operations which involve a single branch, and therefore are free of any context, and those which involve several branches for which we were able to define a concept of _context_.
+These limitations were caused by a fundamental difference between operations which involve several branches, for which we were able to define a concept of _context_, and those which involve a single branch, and therefore are free of any context.
 
 With that in mind, the alternative tree representation we built to work around the so-called _skinny tree representation_ limitations made sense in a more general way, beyond its initial workaround status. We'll talk of a _tree representation_ in a general way from now on, understanding that one of the two alternative representations does apply, depending on the Git commands we're working with.
+
+Finally, we were even able to put together a generalization of the context idea for isolated branches!
 
 In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions.
 
