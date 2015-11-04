@@ -15,6 +15,7 @@ layout: default
           {% for post in site.posts %}
             <li data-publication-date="{{ post.date | date: '%Y-%m-%d' }}">
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              {% if post.meta %}<span class="label">{{ post.meta }}</span>{% endif %}
               <p class="teaser">{{ post.teaser }}</p>
             </li>
           {% endfor %}
