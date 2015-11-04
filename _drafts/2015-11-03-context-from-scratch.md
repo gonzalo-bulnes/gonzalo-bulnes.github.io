@@ -182,7 +182,7 @@ With that in mind, the alternative tree representation we built to work around t
 
 Finally, we were able to put together a generalization of the context idea for isolated branches, which we'll find useful when talking about context adaptations.
 
-In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions. Keep [tuned][rss]!
+In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions. Stay tuned!
 
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the <code>git rebase</code> command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
@@ -191,4 +191,3 @@ In the next post of this series, the concept of context will allow us to underst
 </ol>
 
   [should]: https://www.ietf.org/rfc/rfc2119.txt
-  [rss]: ../../../lala
