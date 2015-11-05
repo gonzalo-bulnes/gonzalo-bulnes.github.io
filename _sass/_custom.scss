@@ -45,6 +45,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+h2 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem;  }
+h3 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h4 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h5 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0;       }
+h6 { color: red }
+
 // Custom
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -138,9 +144,18 @@ h1[data-sorting] {
   }
 }
 
+#toc, #tags, #tag li {
+  .teaser {
+    position: relative;
+    z-index: 0;
+    margin: -3rem 0 0;
+  }
+}
+
 @media (#{$bp-larger-than-phablet}) {
   #toc, #tags, #tag {
     li {
+      position: realtive;
       &::before {
         content: attr(data-publication-date);
         color: $secondary-color;
@@ -150,6 +165,13 @@ h1[data-sorting] {
       }
       a {
         margin: 0 3rem;
+        position: relative;
+        z-index: 1;
+      }
+      .teaser {
+        position: relative;
+        z-index: 0;
+        margin-left: 11rem;
       }
     }
   }
@@ -189,15 +211,14 @@ footer {
 @media (#{$bp-larger-than-tablet}) {
   .post header,
   .post article,
-  .post #tags,
-  .skip {
+  .post #tags {
     max-width: 72rem;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.post article p:last-child {
+.post article p:last-of-type {
   &::after {
     content: "□";
     display: inline;
@@ -222,5 +243,64 @@ footer {
   }
   .author, .meta {
     margin-bottom: .5rem;
+  }
+}
+
+// Markdown-generated HTML
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+article p:first-child,
+article p:nth-child(2) {
+  font-style: italic;
+}
+
+article .footnote {
+  font-size: 1.5rem;
+}
+
+p img {
+  display: block;
+  margin: 1rem;
+  // Skeleton u-max-full-width
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.slideshow {
+  nav {
+    position: absolute;
+    left: -10000px;
+  }
+  article,
+  article a {
+    color: white;
+  }
+  header,
+  img {
+    margin-top: 35rem;
+    margin-bottom: 35rem;
+  }
+
+}
+
+#footnotes {
+  list-style: none;
+  margin-top: 5rem;
+  border-top: 1px dashed $light-grey;
+  padding-top: 2.5rem;
+}
+
+em em {
+  font-style: normal;
+}
+
+.post {
+  counter-reset: section;
+  & h2::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+  }
+  h2:last-of-type::before {
+    content: ""
   }
 }
