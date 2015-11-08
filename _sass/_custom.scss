@@ -227,6 +227,9 @@ footer {
     color: $secondary-color;
   }
 }
+.post article header p:last-of-type::after {
+  content: none;
+}
 
 .post header {
   text-align: center;
@@ -250,7 +253,7 @@ footer {
 // Markdown-generated HTML
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-article p:first-child {
+article p:first-of-type {
   font-style: italic;
 }
 
