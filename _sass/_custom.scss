@@ -250,6 +250,18 @@ footer {
   }
 }
 
+*::selection {
+  background-color: $primary-color;
+  color: white;
+  text-shadow: none;
+}
+
+*::-moz-selection {
+  background-color: $primary-color;
+  color: white;
+  text-shadow: none;
+}
+
 // Markdown-generated HTML
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
