@@ -189,7 +189,7 @@ With that in mind, the alternative tree representation we built to work around t
 
 Finally, we were able to put together a generalization of the context idea for isolated branches, which we'll find useful when talking about context adaptations.
 
-In the next post of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions. Stay tuned!
+In the [next post][next] of this series, the concept of context will allow us to understand different merging scenarios, and drive us toward our first branch management conventions. Stay tuned!
 
 <ol id="footnotes">
   <li class="footnote" id="footnote-1">[<a href="#back-1">1</a>] Because the <code>git rebase</code> command is potentially destructive it <a href="https://www.ietf.org/rfc/rfc2119.txt" title="RFC 2119">SHOULD</a> sound scary.</li>
@@ -197,4 +197,5 @@ In the next post of this series, the concept of context will allow us to underst
    <li class="footnote" id="footnote-3">[<a href="#back-3">3</a>] That's to say you can predict the behaviour of any command that deals with branches <em>collectively</em> using the <strong>skinny tree representation</strong>. And you can predict the behaviour of any command that operates on <em>individual</em> branches using the <strong>fat tree representation</strong>.</li>
 </ol>
 
+  [next]: context-matters.html
   [should]: https://www.ietf.org/rfc/rfc2119.txt
