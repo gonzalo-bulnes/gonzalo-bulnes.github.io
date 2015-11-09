@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Context Matters
+title:  Context Does Matter
 date:   2015-11-11
 categories: blog gardening_with_git
 tags: [recurse_center, gardening_with_git]
