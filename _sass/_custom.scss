@@ -211,7 +211,8 @@ footer {
 @media (#{$bp-larger-than-tablet}) {
   .post header,
   .post article,
-  .post #tags {
+  .post #tags,
+  .post .rc-scout {
     max-width: 72rem;
     margin-left: auto;
     margin-right: auto;
@@ -238,7 +239,7 @@ footer {
   .author a[rel="author"] {
     font-weight: bold;
   }
-  .meta, #tags {
+  .meta, #tags, .rc-scout {
     font-size: 1.5rem;
   }
   .author, .meta {
