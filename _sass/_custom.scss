@@ -148,7 +148,7 @@ h1[data-sorting] {
   .teaser {
     position: relative;
     z-index: 0;
-    margin: -3rem 0 0;
+    margin: -3rem 0 4rem;
   }
 }
 
@@ -304,4 +304,13 @@ em em {
   h2:last-of-type::before {
     content: ""
   }
+}
+
+pre {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+code {
+  border-width: 0;
 }
